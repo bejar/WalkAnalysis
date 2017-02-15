@@ -19,9 +19,9 @@ Exercise
 
 import pandas as pd
 from pymongo import MongoClient
-from Config.Connection import mongoserverlocal
+from iWalker.Private.Connection import mongoserverlocal
 from io import StringIO
-from Util import User
+from iWalker.Data import User
 import numpy as np
 
 __author__ = 'bejar'

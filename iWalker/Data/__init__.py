@@ -18,3 +18,10 @@ __init__.py
 """
 
 __author__ = 'bejar'
+from .Exercise import Exercise
+from .Exercises import Exercises
+from .User import User
+from .Trajectory import Trajectory
+from .Pacientes import Pacientes
+
+__all__ = ['Exercise', 'Exercises', 'User', 'Trajectory', 'Pacientes']

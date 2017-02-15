@@ -19,8 +19,8 @@ Exercises
 
 
 from pymongo import MongoClient
-from Config.Connection import mongoserverlocal
-from Util import Exercise
+from iWalker.Private.Connection import mongoserverlocal
+from iWalker.Data import Exercise
 
 __author__ = 'bejar'
 
