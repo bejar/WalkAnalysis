@@ -1,3 +1,7 @@
-Datos de FSL y Nogales
+* Datos de FSL y Nogales
 
 Los datos de los ejercicios se han transformado del formato .wlk a .csv
+
+Los datos de los pacientes se han pasado a un .csv subido a MongoDB
+
+Los datos de los ejercicios se han subido a MongoDB

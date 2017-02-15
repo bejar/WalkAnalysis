@@ -21,7 +21,7 @@ __author__ = 'bejar'
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+from mpl_toolkits.mplot3d import Axes3D
 
 class Trajectory:
     """
@@ -62,7 +62,7 @@ class Trajectory:
         """
         Sum of distances of a path (the geodesic distance)
 
-        :param vec: Vector of the coordinates of the trajectory
+        :param vec: Vector of the getCoordinates of the trajectory
         :return:
         """
         return self.distances[-1]
@@ -132,7 +132,7 @@ class Trajectory:
 
         Input: an iterable sequence of (x, y) pairs representing the points.
         Output: a list of vertices of the convex hull in counter-clockwise order,
-          starting from the vertex with the lexicographically smallest coordinates.
+          starting from the vertex with the lexicographically smallest getCoordinates.
         Implements Andrew's monotone chain algorithm. O(n log n) complexity.
         """
 
@@ -214,14 +214,14 @@ class Trajectory:
 
     def max_val(self):
         """
-        Returns the maximum value of the coordinates
+        Returns the maximum value of the getCoordinates
         :return:
         """
         return(np.max(self.coords))
 
     def min_val(self):
         """
-        Returns the minimum value of the coordinates
+        Returns the minimum value of the getCoordinates
         :return:
         """
         return(np.min(self.coords))

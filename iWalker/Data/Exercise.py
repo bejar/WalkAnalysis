@@ -27,7 +27,6 @@ import numpy as np
 __author__ = 'bejar'
 
 
-
 class Exercise:
     """
     Class representing the data from an exercise
@@ -35,7 +34,6 @@ class Exercise:
 
     def __init__(self):
         pass
-
 
     def from_data(self, ex):
         self.uid = ex['User ID']
@@ -67,6 +65,22 @@ class Exercise:
         self.lamb = c['i-Walker lambda_right']
         if 'Exercise' in c:
             self.etype = c['Exercise']
+
+    def getCoordinates(self):
+        """
+        Coordinates of the exercise
+        :return:
+        """
+        return np.column_stack((self.frame['epx'], self.frame['epy']
+                         ))
+    def getForces(self):
+        """
+        Coordinates of the exercise
+        :return:
+        """
+        return np.column_stack((self.frame['lhfx'], self.frame['lhfy'], self.frame['lhfz'],
+                                self.frame['rhfx'], self.frame['rhfy'], self.frame['rhfz']
+                         ))
 
     def classify(self, criteria):
         """

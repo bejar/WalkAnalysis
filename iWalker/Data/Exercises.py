@@ -26,6 +26,8 @@ __author__ = 'bejar'
 
 class Exercises:
 
+    header = 'lhfx,lhfy,lhfz,rhfx,rhfy,rhfz,lnf,rnf,acc,magn,gyro,hbl,hbr,epx,epy,epo,ls,rs'
+
     def __init__(self):
         pass
 
@@ -88,16 +90,17 @@ class Exercises:
         for p in lex:
             del self.edict[p]
 
-
-
-
 if __name__ == '__main__':
+    from iWalker.Data import Trajectory
     p = Exercises()
 
     p.from_db(pilot='FSL')
 
     for v in p.iterator():
-        print(v.uid)
+        data = [v.getForces()[:, 2]]
+        # Trajectory(v.getCoordinates()).plot_trajectory(show=True)
+        trj = Trajectory(v.getCoordinates()).plot_over_trajectory(data)
+
 
     print (len(p.edict))
     p.delete_patients(['FSL30'])

@@ -35,7 +35,9 @@ def upload_patients():
     :return:
     """
     col = db['Users']
-    p = Pacientes(odatapath+'pacientes')
+    p = Pacientes()
+    p.from_file(odatapath+'pacientes')
+
     for d in p.ddict:
         col.insert(p.ddict[d])
 
@@ -44,6 +46,8 @@ if __name__ == '__main__':
 
     client = MongoClient(mongoserverlocal)
     db = client.IWalker
+
+    upload_patients()
 
 
     col = db['Exercises']
