@@ -8,6 +8,9 @@ MFT
 
     Computes the Momentary Fourier Transformation
 
+    Computes the n firsts coefficients of the FFT for consecutive windows given the n first FFT coeffs of the first window
+    (cost is O(nwindows*ncoef) instead of  O(wsize*log(wsize)*nwindows)
+
     Albrecht, Cumming, Dudas "The Momentary Fourier Transformation Derived from Recursive Matrix Transformation"
 
 @inproceedings{albrecht1997momentary,
@@ -29,7 +32,7 @@ MFT
 
 """
 import numpy as np
-
+import time
 
 __author__ = 'bejar'
 
@@ -43,19 +46,17 @@ def mft(series, sampling, ncoef, wsize):
     nwindows = len(series) - wsize
     # imaginary matrix for the coefficients
     coef = np.zeros((nwindows, ncoef), dtype=np.complex)
+    dcoef = np.zeros(ncoef, dtype=np.complex)
+    fwsize = float(wsize)
+    pi2i = 1j * 2 * np.pi
 
     y = np.fft.rfft(series[:wsize])
     for l in range(ncoef):
         coef[0, l] = y[l]
+        dcoef[l] = np.exp(pi2i * (l / fwsize))
 
     for w in range(1, nwindows):
-        for l in range(ncoef):
-            fk = np.exp(1j * 2 * np.pi * ((l) / float(wsize)))
-
-            yk = fk * (coef[w - 1, l] + (series[wsize + (w - 1)] - series[w - 1]))
-
-            coef[w, l] = yk
-
+        coef[w] = dcoef * (coef[w - 1] + (series[wsize + (w - 1)] - series[w - 1]))
     return coef
 
 def compute2(series, sampling, ncoef, wsize):
@@ -87,13 +88,21 @@ if __name__ == '__main__':
     e.delete_patients(['FSL30'])
 
     ex = e.iterator().__next__()
-    signal = ex.get_forces()[:,0]
+    signal = ex.get_forces()[:, 0]
     # show_list_signals([signal])
 
-    coef1 = mft(signal, sampling=10, ncoef=2, wsize=20)
-    coef2 = compute2(signal, sampling=10, ncoef=2, wsize=20)
+    print(signal.shape)
+    itime = time.time()
+    coef1 = mft(signal, sampling=10, ncoef=15, wsize=32)
+    ftime = time.time()
+    print(ftime - itime)
 
-    for i in range(coef1.shape[0]):
-        print(coef1[i], coef2[i])
+    itime = time.time()
+    coef2 = compute2(signal, sampling=10, ncoef=15, wsize=32)
+    ftime = time.time()
+    print(ftime - itime)
+
+    # for i in range(coef1.shape[0]):
+    #     print(coef1[i]-coef2[i])
 
 
