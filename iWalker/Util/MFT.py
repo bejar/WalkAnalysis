@@ -30,6 +30,7 @@ MFT
 """
 import numpy as np
 
+
 __author__ = 'bejar'
 
 
@@ -47,20 +48,20 @@ class MFT():
         self.series = series
         self.samplig = sampling
 
-
     def compute(self, ncoef, wsize):
         """
-        Computes the nfreq fourier coefficient for the series
+        Computes the ncoef fourier coefficient for the series
         :return:
         """
 
         nwindows = len(self.series)-wsize
         # imaginary matrix for the coefficients
         coef = np.zeros((nwindows, ncoef), dtype=np.complex)
+        print(coef.shape)
 
         y = np.fft.rfft(self.series[:wsize])
         for l in range(ncoef):
-            coef[l, 0] = y[l]
+            coef[0, l] = y[l]
 
         for w in range(1, nwindows):
             for l in range(ncoef):
@@ -68,8 +69,27 @@ class MFT():
 
                 yk = fk * (y[l] + (self.series[wsize+w]-self.series[w]))
 
-                coef[l,w] = yk
-                y[l] = coef[l,w]
+                coef[w, l] = yk
+                y[l] = coef[w, l]
 
+        print(coef)
+
+
+if __name__ == '__main__':
+    from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
+    from iWalker.Util.Misc import show_list_signals
+    p = Pacientes()
+    e = Exercises()
+    p.from_db(pilot='NOGA')
+    e.from_db(pilot='NOGA')
+    e.delete_patients(['FSL30'])
+
+    ex = e.iterator().__next__()
+    signal = ex.get_forces()[:,0]
+    # show_list_signals([signal])
+
+    mft = MFT(signal, sampling=10)
+
+    mft.compute(ncoef=2, wsize=20)
 
 

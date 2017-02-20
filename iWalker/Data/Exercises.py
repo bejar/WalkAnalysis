@@ -97,9 +97,9 @@ if __name__ == '__main__':
     p.from_db(pilot='FSL')
 
     for v in p.iterator():
-        data = [v.getForces()[:, 2]]
-        # Trajectory(v.getCoordinates()).plot_trajectory(show=True)
-        trj = Trajectory(v.getCoordinates()).plot_over_trajectory(data)
+        data = [v.get_forces()[:, 2]]
+        # Trajectory(v.get_coordinates()).plot_trajectory(show=True)
+        trj = Trajectory(v.get_coordinates()).plot_over_trajectory(data)
 
 
     print (len(p.edict))

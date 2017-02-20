@@ -66,14 +66,14 @@ class Exercise:
         if 'Exercise' in c:
             self.etype = c['Exercise']
 
-    def getCoordinates(self):
+    def get_coordinates(self):
         """
         Coordinates of the exercise
         :return:
         """
         return np.column_stack((self.frame['epx'], self.frame['epy']
                          ))
-    def getForces(self):
+    def get_forces(self):
         """
         Coordinates of the exercise
         :return:
