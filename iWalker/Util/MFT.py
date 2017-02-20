@@ -34,46 +34,48 @@ import numpy as np
 __author__ = 'bejar'
 
 
-class MFT():
+def mft(series, sampling, ncoef, wsize):
     """
-    Encapsulates the computation of the MFT
+    Computes the ncoef fourier coefficient for the series
+    :return:
     """
 
-    def __init__(self, series, sampling):
-        """
+    nwindows = len(series) - wsize
+    # imaginary matrix for the coefficients
+    coef = np.zeros((nwindows, ncoef), dtype=np.complex)
 
-        :param series: a numpy array with the data (real values)
-        :param sampling: sampling of the signal
-        """
-        self.series = series
-        self.samplig = sampling
+    y = np.fft.rfft(series[:wsize])
+    for l in range(ncoef):
+        coef[0, l] = y[l]
 
-    def compute(self, ncoef, wsize):
+    for w in range(1, nwindows):
+        for l in range(ncoef):
+            fk = np.exp(1j * 2 * np.pi * ((l) / float(wsize)))
+
+            yk = fk * (coef[w - 1, l] + (series[wsize + (w - 1)] - series[w - 1]))
+
+            coef[w, l] = yk
+
+    return coef
+
+def compute2(series, sampling, ncoef, wsize):
         """
-        Computes the ncoef fourier coefficient for the series
+        FFT the usual way for testing purposes
+        :param ncoef:
+        :param wsize:
         :return:
         """
-
-        nwindows = len(self.series)-wsize
+        nwindows = len(series)-wsize
         # imaginary matrix for the coefficients
         coef = np.zeros((nwindows, ncoef), dtype=np.complex)
-        print(coef.shape)
 
-        y = np.fft.rfft(self.series[:wsize])
-        for l in range(ncoef):
-            coef[0, l] = y[l]
-
-        for w in range(1, nwindows):
+        for w in range(nwindows):
+            y = np.fft.rfft(series[w:w+wsize])
             for l in range(ncoef):
-                fk = np.exp(1j*2*np.pi*((l)/float(wsize)))
+                coef[w, l] = y[l]
 
-                yk = fk * (y[l] + (self.series[wsize+w]-self.series[w]))
 
-                coef[w, l] = yk
-                y[l] = coef[w, l]
-
-        print(coef)
-
+        return coef
 
 if __name__ == '__main__':
     from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
@@ -88,8 +90,10 @@ if __name__ == '__main__':
     signal = ex.get_forces()[:,0]
     # show_list_signals([signal])
 
-    mft = MFT(signal, sampling=10)
+    coef1 = mft(signal, sampling=10, ncoef=2, wsize=20)
+    coef2 = compute2(signal, sampling=10, ncoef=2, wsize=20)
 
-    mft.compute(ncoef=2, wsize=20)
+    for i in range(coef1.shape[0]):
+        print(coef1[i], coef2[i])
 
 

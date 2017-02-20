@@ -18,3 +18,9 @@ __init__.py
 """
 
 __author__ = 'bejar'
+
+from .MFT import mft
+from .BOSS import Boss
+from .STFT import stft
+
+__all__ = ['mft', 'Boss', 'stft']
