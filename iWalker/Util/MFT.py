@@ -37,12 +37,17 @@ import time
 __author__ = 'bejar'
 
 
-def mft(series, sampling, ncoef, wsize):
+def mft(series, sampling, ncoef, wsize, butfirst=False):
     """
     Computes the ncoef fourier coefficient for the series
+
+    butfirst eliminates the first coefficient (mean of the signal)
+
     :return:
     """
 
+    if butfirst:
+        ncoef += 1
     nwindows = len(series) - wsize
     # imaginary matrix for the coefficients
     coef = np.zeros((nwindows, ncoef), dtype=np.complex)
@@ -57,30 +62,36 @@ def mft(series, sampling, ncoef, wsize):
 
     for w in range(1, nwindows):
         coef[w] = dcoef * (coef[w - 1] + (series[wsize + (w - 1)] - series[w - 1]))
-    return coef
 
-def compute2(series, sampling, ncoef, wsize):
-        """
-        FFT the usual way for testing purposes
-        :param ncoef:
-        :param wsize:
-        :return:
-        """
-        nwindows = len(series)-wsize
-        # imaginary matrix for the coefficients
-        coef = np.zeros((nwindows, ncoef), dtype=np.complex)
-
-        for w in range(nwindows):
-            y = np.fft.rfft(series[w:w+wsize])
-            for l in range(ncoef):
-                coef[w, l] = y[l]
-
-
+    if butfirst:
+        return coef[:, 1:]
+    else:
         return coef
+
+
+# def compute2(series, sampling, ncoef, wsize):
+#         """
+#         FFT the usual way for testing purposes
+#         :param ncoef:
+#         :param wsize:
+#         :return:
+#         """
+#         nwindows = len(series)-wsize
+#         # imaginary matrix for the coefficients
+#         coef = np.zeros((nwindows, ncoef), dtype=np.complex)
+#
+#         for w in range(nwindows):
+#             y = np.fft.rfft(series[w:w+wsize])
+#             for l in range(ncoef):
+#                 coef[w, l] = y[l]
+#
+#
+#         return coef
 
 if __name__ == '__main__':
     from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
     from iWalker.Util.Misc import show_list_signals
+
     p = Pacientes()
     e = Exercises()
     p.from_db(pilot='NOGA')
@@ -97,12 +108,10 @@ if __name__ == '__main__':
     ftime = time.time()
     print(ftime - itime)
 
-    itime = time.time()
-    coef2 = compute2(signal, sampling=10, ncoef=15, wsize=32)
-    ftime = time.time()
-    print(ftime - itime)
+    # itime = time.time()
+    # coef2 = compute2(signal, sampling=10, ncoef=15, wsize=32)
+    # ftime = time.time()
+    # print(ftime - itime)
 
     # for i in range(coef1.shape[0]):
     #     print(coef1[i]-coef2[i])
-
-

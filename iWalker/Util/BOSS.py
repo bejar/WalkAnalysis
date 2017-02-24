@@ -26,19 +26,77 @@ from collections import Counter
 __author__ = 'bejar'
 
 
+def boss_distance(histo1, histo2):
+    """
+    BOSS distance between two histograms
+
+    Not really a distance because it is not symmetric
+
+    :param histo1:
+    :param histo2:
+    :return:
+    """
+    val = 0
+    for w in histo1:
+        if w in histo2:
+            val += (histo1[w] - histo2[w]) ** 2
+        else:
+            val += histo1[w] * histo1[w]
+
+    return val
+
+
+def euclidean_distance(histo1, histo2):
+    """
+    Euclidean distance between two histograms
+
+    :param histo1:
+    :param histo2:
+    :return:
+    """
+    val = 0
+    lnot = []
+    for w in histo1:
+        if w in histo2:
+            val += (histo1[w] - histo2[w]) ** 2
+            lnot.append(w)
+        else:
+            val += histo1[w] * histo1[w]
+
+    for w in histo2:
+        if w not in lnot:
+            val += histo2[w] * histo2[w]
+
+    return val
+
+def bin_hamming_distance(histo1, histo2):
+    """
+    jaccard distance between two histograms
+
+    :param histo1:
+    :param histo2:
+    :return:
+    """
+    s1 = set(histo1.keys())
+    s2 = set(histo2.keys())
+    return len(s1) + len(s2) - len(s1.intersection(s2))
+
+
 class Boss():
     """
-    Computes the BOSS words for a series
+    Computes the BOSS words for a dictionary of series
     """
-    def __init__(self, lseries, sampling):
+    def __init__(self, dseries, sampling, butfirst=False):
         """
 
-        :param series:
+        :param dseries:
         :param sampling:
         """
-        self.series = lseries
+        self.series = dseries
         self.sampling = sampling
-        self.coefs = []
+        self.coefs = {}
+        self.codes = {}
+        self.butfirst = butfirst
 
     def discretization_intervals(self, ncoef, wsize, vsize):
         """
@@ -50,16 +108,18 @@ class Boss():
         :return:
         """
 
+        all_coefs = []
         for s in self.series:
-            coefs = mft(s, self.sampling, ncoef, wsize)
+            coefs = mft(self.series[s], self.sampling, ncoef, wsize, butfirst=self.butfirst)
             lcoefs = []
             for i in range(coefs.shape[1]):
                 lcoefs.append(coefs[:,i].real)
                 lcoefs.append(coefs[:,i].imag)
 
-            self.coefs.append(np.stack(lcoefs, axis=-1))
+            all_coefs.append(np.stack(lcoefs, axis=-1))
+            self.coefs[s] = all_coefs[-1]
 
-        X = np.concatenate(self.coefs)
+        X = np.concatenate(all_coefs)
 
         self.disc = Discretizer(method='frequency', bins=vsize)
         self.disc.fit(X)
@@ -83,14 +143,16 @@ class Boss():
             return w
 
         for c in self.coefs:
-            sdisc = self.disc.transform(c, copy=True).real
+            sdisc = self.disc.transform(self.coefs[c], copy=True).real
             prevw = word(sdisc[0])
             lvoc = [prevw]
             for i in range(1,sdisc.shape[0]):
                 nword = word(sdisc[i])
                 if nword != prevw:
                     lvoc.append(nword)
-            print(Counter(lvoc))
+            self.codes[c] = Counter(lvoc)
+
+            # print(c, self.codes[c])
 
 
 if __name__ == '__main__':
@@ -101,20 +163,20 @@ if __name__ == '__main__':
     p.from_db(pilot='NOGA')
     e.from_db(pilot='NOGA')
     e.delete_patients(['FSL30'])
+    wlen = 64
+    voclen = 3
+    ncoefs = 3
 
-    lseries = []
-
-    i = 0
+    dseries = {}
     for ex in e.iterator():
-        if i < 3:
-            lseries.append(ex.get_forces()[:, 0])
-        else:
-            break
-        i += 1
+        forces = ex.get_forces()
+        if forces.shape[0] > wlen:
+            dseries[ex.id] = forces[:, 0]
 
-    boss = Boss(lseries, 10)
-
-    boss.discretization_intervals(2, 32, 3)
+    boss = Boss(dseries, 10)
+    boss.discretization_intervals(ncoefs, wlen, voclen)
     boss.discretize()
+
+
 
 
