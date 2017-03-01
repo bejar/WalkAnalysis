@@ -20,7 +20,7 @@ __init__.py
 __author__ = 'bejar'
 
 from .MFT import mft
-from .BOSS import Boss, boss_distance, euclidean_distance
+from .BOSS import Boss, boss_distance, euclidean_distance, bin_hamming_distance, hamming_distance
 from .STFT import stft
 
-__all__ = ['mft', 'Boss', 'stft', 'boss_distance', 'euclidean_distance']
+__all__ = ['mft', 'Boss', 'stft', 'boss_distance', 'euclidean_distance', 'hamming_distance', 'bin_hamming_distance']

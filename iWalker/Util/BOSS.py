@@ -69,6 +69,29 @@ def euclidean_distance(histo1, histo2):
 
     return val
 
+def hamming_distance(histo1, histo2):
+    """
+    Euclidean distance between two histograms
+
+    :param histo1:
+    :param histo2:
+    :return:
+    """
+    val = 0
+    lnot = []
+    for w in histo1:
+        if w in histo2:
+            val += np.abs((histo1[w] - histo2[w]))
+            lnot.append(w)
+        else:
+            val += histo1[w]
+
+    for w in histo2:
+        if w not in lnot:
+            val += histo2[w]
+
+    return val
+
 def bin_hamming_distance(histo1, histo2):
     """
     jaccard distance between two histograms

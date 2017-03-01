@@ -20,7 +20,7 @@ Exercises
 
 from pymongo import MongoClient
 from iWalker.Private.Connection import mongoserverlocal
-from iWalker.Data import Exercise
+from iWalker.Data import Exercise, Trajectory
 
 __author__ = 'bejar'
 
@@ -101,8 +101,8 @@ if __name__ == '__main__':
     from iWalker.Data import Trajectory
     p = Exercises()
     p.from_db(pilot='FSL')
-    p2 = Exercises()
-    p2.from_db(pilot='NOGALES')
+    # p2 = Exercises()
+    # p2.from_db(pilot='NOGALES')
 
 
     # for v in p.iterator():
@@ -111,10 +111,17 @@ if __name__ == '__main__':
     #     trj = Trajectory(v.get_coordinates()).plot_over_trajectory(data)
 
 
-    print (len(p.edict))
-    p.delete_patients(['FSL30'])
-    print (len(p.edict))
-    print (len(p2.edict))
-    p.merge(p2)
-    print (len(p.edict))
+    # print (len(p.edict))
+    # p.delete_patients(['FSL30'])
+    # print (len(p.edict))
+    # print (len(p2.edict))
+    # p.merge(p2)
+    # print (len(p.edict))
 
+
+    for ex in p.iterator():
+        ex.classify('speed')
+
+        t = Trajectory(ex.get_coordinates())
+        print(t.straightness())
+        t.plot_trajectory(show=True)
