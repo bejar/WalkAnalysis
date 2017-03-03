@@ -69,6 +69,26 @@ def euclidean_distance(histo1, histo2):
 
     return val
 
+def cosine_similarity(histo1, histo2):
+    """
+    Euclidean distance between two histograms
+
+    :param histo1:
+    :param histo2:
+    :return:
+    """
+    val = 0.0
+    norm1 = 0.0
+    for w in histo1:
+        if w in histo2:
+            val += (histo1[w] * histo2[w])
+        norm1 += histo1[w] ** 2
+    norm2 = 0.0
+    for w in histo2:
+        norm2 += histo2[w] ** 2
+
+    return val/(np.sqrt(norm1) * np.sqrt(norm2))
+
 def hamming_distance(histo1, histo2):
     """
     Euclidean distance between two histograms

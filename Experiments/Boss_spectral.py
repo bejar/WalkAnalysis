@@ -1,10 +1,10 @@
 """
-.. module:: Exp_BOSS
+.. module:: Boss_spectral
 
-Exp_BOSS
+Boss_spectral
 *************
 
-:Description: Exp_BOSS
+:Description: Boss_spectral
 
     
 
@@ -13,11 +13,12 @@ Exp_BOSS
 
 :Version: 
 
-:Created on: 22/02/2017 11:20 
+:Created on: 03/03/2017 9:39 
 
 """
 
 __author__ = 'bejar'
+
 
 from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
 from iWalker.Util.Misc import show_list_signals
@@ -27,39 +28,33 @@ from sklearn.manifold import MDS, Isomap, TSNE, SpectralEmbedding
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+from sklearn.mixture import BayesianGaussianMixture as Dirichlet
+import matplotlib.colors as colors
 
+# colors = "rgbymcykrgbymcyk"
 
 if __name__ == '__main__':
     p = Pacientes()
     e = Exercises()
-    p2 = Pacientes()
-    e2 = Exercises()
 
     p.from_db(pilot='NOGALES')
     e.from_db(pilot='NOGALES')
-    # p2.from_db(pilot='FSL')
-    # e2.from_db(pilot='FSL')
-    # e2.delete_patients(['FSL30'])
-    #
-    # e.merge(e2)
 
-    e.delete_exercises([1425290750])
-    # e.delete_exercises([1416241920, 1416241871, 1416409354, 1416391685, 1416933676, 1416918342, 1416391884, 1416391948])
+    # e.delete_exercises([1425290750])
+
     wlen = 128
-    voclen = 3
+    voclen = 5
     ncoefs = 5
 
     nseries = 0
     lcl = []
 
-    print(len(e.edict))
-    for ex in e.iterator():
-        t = Trajectory(ex.get_coordinates())
-        if t.straightness()[0] < 0.9:
-            e.delete_exercises([ex.id])
-    print(len(e.edict))
-
-
+    # print(len(e.edict))
+    # for ex in e.iterator():
+    #     t = Trajectory(ex.get_coordinates())
+    #     if t.straightness()[0] > 0.9:
+    #         e.delete_exercises([ex.id])
+    # print(len(e.edict))
 
     for ex in e.iterator():
         forces = ex.get_forces()
@@ -87,7 +82,6 @@ if __name__ == '__main__':
         boss.discretization_intervals(ncoefs, wlen, voclen)
         boss.discretize()
         lcodes = list(boss.codes.keys())
-
         for i in range(len(lcodes)):
             for j in range(i+1, len(lcodes)):
                 # mdist[i,j] += bin_hamming_distance(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
@@ -96,31 +90,46 @@ if __name__ == '__main__':
                 mdist[j, i] = mdist[i,j]
                 # mdist[i,j] += (boss_distance(boss.codes[v1], boss.codes[v2]) + boss_distance(boss.codes[v2], boss.codes[v1]))/2
 
-    # lej = []
-    # for i, ex in enumerate(boss.codes.keys()):
-    #     lej.append((np.mean(mdist[i,:]), ex))
-    #
-    # for d, e in sorted(lej):
-    #     print(e,d)
+    lexer = list(boss.codes.keys())
 
     mdist /= np.max(mdist)
+    fdata = mdist
+    imap = SpectralEmbedding(n_components=3, affinity='precomputed')
+    fdata = imap.fit_transform(fdata)
 
-    # transf = MDS(n_components=100, dissimilarity='precomputed', n_jobs=-1, random_state=0)
-    # fdata = transf.fit_transform(mdist)
-    # print(transf.stress_)
+    # fig = plt.figure(figsize=(10, 10))
+    # # ax = fig.add_subplot(111, projection='3d')
+    # ax = fig.add_subplot(111)
+    #
+    # # plt.scatter(fdata[:, 0], fdata[:, 1], zs=fdata[:, 2], depthshade=False, s=100)
+    # plt.scatter(fdata[:, 0], fdata[:, 1], c=lcl)
+    #
+    # plt.show()
 
-    for nn in range(1, 2, 2):
-        print(nn)
-        fdata = mdist
-        # imap = Isomap(n_components=3, n_neighbors=nn, n_jobs=-1)
-        imap = SpectralEmbedding(n_components=2, affinity='precomputed', n_neighbors=nn)
-        fdata = imap.fit_transform(fdata)
+    dp = Dirichlet(n_components=10)
 
-        fig = plt.figure(figsize=(10,10))
-        # ax = fig.add_subplot(111, projection='3d')
-        ax = fig.add_subplot(111)
+    dp.fit(fdata)
 
-        # plt.scatter(fdata[:, 0], fdata[:, 1], zs=fdata[:, 2], depthshade=False, s=100)
-        plt.scatter(fdata[:, 0], fdata[:, 1], c=lcl)
+    lab = dp.predict(fdata)
+    print(np.unique(lab))
 
-        plt.show()
+    fig = plt.figure(figsize=(10, 10))
+    ax = fig.add_subplot(111, projection='3d')
+    # ax = fig.add_subplot(111)
+
+
+    plt.scatter(fdata[:, 0], fdata[:, 1], zs=fdata[:, 2], depthshade=False, s=100, c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet') )
+    # plt.scatter(fdata[:, 0], fdata[:, 1], c=[colors[i] for i in lab])
+    plt.colorbar()
+    plt.show()
+
+    # classes = {}
+    # for i in np.unique(lab):
+    #     classes[i] = []
+    # for i, ex in  zip(lab, lexer):
+    #     eid = ex.split('#')[1]
+    #     classes[i].append((ex.split('#')[0], eid,  e.edict[int(eid)].lamb))
+    #
+    # for i in classes:
+    #     print(sorted(classes[i]))
+
