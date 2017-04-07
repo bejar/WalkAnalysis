@@ -43,18 +43,18 @@ if __name__ == '__main__':
     # e.delete_exercises([1425290750])
 
     wlen = 128
-    voclen = 5
+    voclen = 3
     ncoefs = 5
 
     nseries = 0
     lcl = []
 
-    # print(len(e.edict))
-    # for ex in e.iterator():
-    #     t = Trajectory(ex.get_coordinates())
-    #     if t.straightness()[0] > 0.9:
-    #         e.delete_exercises([ex.id])
-    # print(len(e.edict))
+    print(len(e.edict))
+    for ex in e.iterator():
+        t = Trajectory(ex.get_coordinates())
+        if t.straightness()[0] < 0.95:
+            e.delete_exercises([ex.id])
+    print(len(e.edict))
 
     for ex in e.iterator():
         forces = ex.get_forces()

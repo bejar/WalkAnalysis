@@ -19,7 +19,7 @@ Exercises
 
 
 from pymongo import MongoClient
-from iWalker.Private.Connection import mongoserverlocal
+from iWalker.Private.Connection import mongoserver, mongopass, mongouser
 from iWalker.Data import Exercise, Trajectory
 
 __author__ = 'bejar'
@@ -40,8 +40,9 @@ class Exercises:
         :return:
         """
 
-        client = MongoClient(mongoserverlocal)
-        db = client.IWalker
+        client = MongoClient(mongoserver)
+        db = client.iwalkersws
+        db.authenticate(mongouser, password=mongopass)
         col = db['Exercises']
         if pilot is None and id is None:
             c = col.find()

@@ -22,7 +22,7 @@ __author__ = 'bejar'
 
 import pandas as pd
 from pymongo import MongoClient
-from iWalker.Private.Connection import mongoserverlocal
+from iWalker.Private.Connection import mongoserver, mongouser, mongopass
 
 
 class Pacientes():
@@ -44,7 +44,8 @@ class Pacientes():
         self.ddict = {}
 
         for d in frame.itertuples():
-            self.ddict[d.Codigo] = {'Codigo': d.Codigo, 'Edad':d.Edad, 'Tineti': d.Tineti, 'Barthel': d.Barthel, 'GDS': d.GDS, 'Caidas': d.Caidas}
+            self.ddict[d.Codigo] = {'Codigo': d.Codigo, 'Edad': int(d.Edad), 'Tineti': int(d.Tineti),
+                                    'Barthel': int(d.Barthel), 'GDS': int(d.GDS), 'Caidas': int(d.Caidas)}
 
     def from_db(self, pilot=None):
         """
@@ -52,8 +53,9 @@ class Pacientes():
 
         :return:
         """
-        client = MongoClient(mongoserverlocal)
-        db = client.IWalker
+        client = MongoClient(mongoserver)
+        db = client.iwalkersws
+        db.authenticate(mongouser, password=mongopass)
         col = db['Users']
 
         if pilot is None:

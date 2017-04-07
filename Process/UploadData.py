@@ -23,7 +23,7 @@ __author__ = 'bejar'
 import os
 from pymongo import MongoClient
 from iWalker.Config.Constants import odatapath, datasets, datasets2
-from iWalker.Private.Connection import mongoserverlocal
+from iWalker.Private.Connection import mongoserverlocal, mongouser, mongopass, mongoserver
 from iWalker.Data import User, Pacientes
 import pandas as pd
 
@@ -39,20 +39,21 @@ def upload_patients():
     p.from_file(odatapath+'pacientes')
 
     for d in p.ddict:
+        print(p.ddict[d])
         col.insert(p.ddict[d])
 
 if __name__ == '__main__':
 
 
-    client = MongoClient(mongoserverlocal)
-    db = client.IWalker
-
+    # client = MongoClient(mongoserverlocal)
+    client = MongoClient(mongoserver)
+    db = client.iwalkersws
+    db.authenticate(mongouser, password=mongopass)
     upload_patients()
-
 
     col = db['Exercises']
 
-    for ds in datasets2:
+    for ds in datasets:
         lfiles = sorted(os.listdir(odatapath+ds))
         lfiles = [f.split('.')[0] for f in lfiles if f.split('.')[1] == 'usr']
 
