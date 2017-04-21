@@ -71,7 +71,7 @@ if __name__ == '__main__':
     mdist = np.zeros((nseries, nseries))
     print(nseries)
 
-    for f in range(6):
+    for f in [0,1,2,3,4,5]:
         dseries = {}
         for ex in e.iterator():
             forces = ex.get_forces()
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
     mdist /= np.max(mdist)
     fdata = mdist
-    imap = SpectralEmbedding(n_components=3, affinity='precomputed')
+    imap = SpectralEmbedding(n_components=2, affinity='precomputed')
     fdata = imap.fit_transform(fdata)
 
     # fig = plt.figure(figsize=(10, 10))
@@ -114,12 +114,12 @@ if __name__ == '__main__':
     print(np.unique(lab))
 
     fig = plt.figure(figsize=(10, 10))
-    ax = fig.add_subplot(111, projection='3d')
-    # ax = fig.add_subplot(111)
+    # ax = fig.add_subplot(111, projection='3d')
+    ax = fig.add_subplot(111)
 
 
-    plt.scatter(fdata[:, 0], fdata[:, 1], zs=fdata[:, 2], depthshade=False, s=100, c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet') )
-    # plt.scatter(fdata[:, 0], fdata[:, 1], c=[colors[i] for i in lab])
+    # plt.scatter(fdata[:, 0], fdata[:, 1], zs=fdata[:, 2], depthshade=False, s=100, c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet') )
+    plt.scatter(fdata[:, 0], fdata[:, 1], c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet'))
     plt.colorbar()
     plt.show()
 
