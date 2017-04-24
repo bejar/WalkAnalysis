@@ -19,7 +19,6 @@ Pacientes
 
 __author__ = 'bejar'
 
-
 import pandas as pd
 from pymongo import MongoClient
 from iWalker.Private.Connection import mongoserver, mongouser, mongopass
@@ -40,7 +39,7 @@ class Pacientes():
         :param dfile:
         :return:
         """
-        frame = pd.read_csv(dfile+'.csv', sep=';')
+        frame = pd.read_csv(dfile + '.csv', sep=';')
         self.ddict = {}
 
         for d in frame.itertuples():
@@ -63,11 +62,10 @@ class Pacientes():
         else:
             c = col.find({'Codigo': {'$regex': pilot + '.*'}})
 
-
         self.ddict = {}
         for d in c:
-            self.ddict[d['Codigo']] = {'Codigo': d['Codigo'], 'Edad':d['Edad'], 'Tineti': d['Tineti'], 'Barthel': d['Barthel'], 'GDS': d['GDS'], 'Caidas': d['Caidas']}
-
+            self.ddict[d['Codigo']] = {'Codigo': d['Codigo'], 'Edad': d['Edad'], 'Tineti': d['Tineti'],
+                                       'Barthel': d['Barthel'], 'GDS': d['GDS'], 'Caidas': d['Caidas']}
 
     def get_patient_attribute(self, patient, attribute):
         """
@@ -100,6 +98,7 @@ class Pacientes():
         for p in lpat:
             del self.ddict[p]
 
+
 if __name__ == '__main__':
     p = Pacientes()
 
@@ -109,6 +108,5 @@ if __name__ == '__main__':
         print(v)
     print(len(p.ddict))
     p.del_patients(['FSL30'])
-
 
     print(len(p.ddict))

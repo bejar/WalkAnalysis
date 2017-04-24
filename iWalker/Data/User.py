@@ -19,12 +19,14 @@ user
 
 __author__ = 'bejar'
 
+
 def is_int(v):
     try:
         a = int(v)
         return True
     except ValueError:
         return False
+
 
 def is_float(v):
     try:
@@ -33,8 +35,8 @@ def is_float(v):
     except ValueError:
         return False
 
-class User():
 
+class User():
     def __init__(self, nfile):
         f = open(nfile + '.usr', 'r')
         self.data = {}

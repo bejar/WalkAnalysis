@@ -30,27 +30,11 @@ from iWalker.Util.Smoothing import ALS_smoothing, numpy_smoothing
 from scipy.signal import argrelextrema
 from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
 from operator import itemgetter, attrgetter, methodcaller
-
+from iWalker.Util import extract_extrema
 __author__ = 'bejar'
 
 
-def extract_extrema(signal, smoothed=True):
-    """
-    Return a vector with only the extrema
-    :param signal:
-    :return:
-    """
-    if smoothed:
-        smthsigx = ALS_smoothing(signal, 1, 0.1)
-    else:
-        smthsigx = signal
 
-    smax = argrelextrema(smthsigx, np.greater_equal, order=3)
-    smin = argrelextrema(smthsigx, np.less_equal, order=3)
-    vext = np.array([np.nan] * len(signal))
-    vext[smax] = smthsigx[smax]
-    vext[smin] = smthsigx[smin]
-    return vext.copy()
 
 
 def segment_signal(signal, sbegin, send, smoothed=True):
@@ -173,8 +157,8 @@ def segmentation(frame, traj=False):
             plt.show()
         
         plt.close()
-    if ltuples is not None:
 
+    if ltuples is not None:
         fig = plt.figure(figsize=(60, 20))
         ax = fig.add_subplot(111)
         plt.plot(vdis, frame['rhfz'], c='r')

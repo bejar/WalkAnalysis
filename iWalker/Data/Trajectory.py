@@ -23,6 +23,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+
 class Trajectory:
     """
     Stores the information from a trajectory
@@ -43,13 +44,13 @@ class Trajectory:
         # Accumulated distances
         self.distances = np.zeros(self.coords.shape[0])
         for i in range(1, self.coords.shape[0]):
-            dx = self.coords[i-1, 0] - self.coords[i, 0]
-            dy = self.coords[i-1, 1] - self.coords[i, 1]
-            self.distances[i] = self.distances[i-1] + np.sqrt((dx*dx) + (dy*dy))
+            dx = self.coords[i - 1, 0] - self.coords[i, 0]
+            dy = self.coords[i - 1, 1] - self.coords[i, 1]
+            self.distances[i] = self.distances[i - 1] + np.sqrt((dx * dx) + (dy * dy))
 
         self.cv_hull = self.convex_hull()
-        self.cdmx = np.sum(self.coords[:, 0])/(self.coords.shape[0]*1.0)
-        self.cdmy = np.sum(self.coords[:, 1])/(self.coords.shape[0]*1.0)
+        self.cdmx = np.sum(self.coords[:, 0]) / (self.coords.shape[0] * 1.0)
+        self.cdmy = np.sum(self.coords[:, 1]) / (self.coords.shape[0] * 1.0)
 
     def cdm(self):
         """
@@ -72,7 +73,6 @@ class Trajectory:
         #
         # return dif
 
-
     def parametric_select(self, min, max):
         """
         Uses the trajectory in vec parametrically normalizing its distanced to the interval [0-1] and selects from the
@@ -91,14 +91,15 @@ class Trajectory:
         rows = [j for j in range(vec.shape[0]) if min <= dist[j] <= max]
         sel = Trajectory(vec[rows, :])
 
-        return(sel)
+        return (sel)
 
     def euclidean_end_to_end(self):
         """
         Euclidean distance between the beginning and the end of the trajectory
         :return:
         """
-        return np.sqrt(((self.coords[-1,0] - self.coords[0,0])**2) + ((self.coords[-1,1] - self.coords[0,1])**2))
+        return np.sqrt(
+            ((self.coords[-1, 0] - self.coords[0, 0]) ** 2) + ((self.coords[-1, 1] - self.coords[0, 1]) ** 2))
 
     def straightness(self):
         """
@@ -115,15 +116,14 @@ class Trajectory:
         mx = self.cdmx  # np.sum(vec[:,0])/(vec.shape[0]*1.0)
         my = self.cdmy  # np.sum(vec[:,1])/(vec.shape[0]*1.0)
 
-        otocdm = np.sqrt(((vec[0,0] - mx)**2) + ((vec[0,1] - my)**2))
-        ftocdm = np.sqrt(((vec[-1,0] - mx)**2) + ((vec[-1,1] - my)**2))
+        otocdm = np.sqrt(((vec[0, 0] - mx) ** 2) + ((vec[0, 1] - my) ** 2))
+        ftocdm = np.sqrt(((vec[-1, 0] - mx) ** 2) + ((vec[-1, 1] - my) ** 2))
 
         euc = otocdm + ftocdm
 
         euc2 = self.euclidean_end_to_end()
         geo = self.geodesic()
-        return euc2/geo, euc/geo
-
+        return euc2 / geo, euc / geo
 
     def convex_hull(self):
         """Computes the convex hull of a set of 2D points.
@@ -138,7 +138,7 @@ class Trajectory:
 
         # Sort the points lexicographically (tuples are compared lexicographically).
         # Remove duplicates to detect the case we have just one unique point.
-        points = [(x,y) for x, y in zip(self.coords[:,0], self.coords[:,1])]
+        points = [(x, y) for x, y in zip(self.coords[:, 0], self.coords[:, 1])]
         coords = sorted(set(points))
 
         # Boring case: no points or a single point, possibly repeated multiple times.
@@ -190,8 +190,8 @@ class Trajectory:
         :return:
         """
         # Centroid of the convex hull
-        chcdmx = np.sum(self.cv_hull[:,0])/(self.cv_hull.shape[0]*1.0)
-        chcdmy = np.sum(self.cv_hull[:,1])/(self.cv_hull.shape[0]*1.0)
+        chcdmx = np.sum(self.cv_hull[:, 0]) / (self.cv_hull.shape[0] * 1.0)
+        chcdmy = np.sum(self.cv_hull[:, 1]) / (self.cv_hull.shape[0] * 1.0)
 
         chdist = self.cv_hull - np.array([chcdmx, chcdmy])
         chdist = chdist * chdist
@@ -200,7 +200,7 @@ class Trajectory:
         axmin = np.min(chdist)
         axmax = np.max(chdist)
 
-        return axmin/axmax
+        return axmin / axmax
 
     def convex_hull_perimeter(self):
         """
@@ -217,14 +217,14 @@ class Trajectory:
         Returns the maximum value of the get_coordinates
         :return:
         """
-        return(np.max(self.coords))
+        return (np.max(self.coords))
 
     def min_val(self):
         """
         Returns the minimum value of the get_coordinates
         :return:
         """
-        return(np.min(self.coords))
+        return (np.min(self.coords))
 
     def plot_trajectory(self, show=False):
         """
@@ -234,29 +234,29 @@ class Trajectory:
         """
         mx, my = self.cdm()
 
-        otocdm = np.sqrt(((self.coords[0,0] - mx)**2) + ((self.coords[0,1] - my)**2))
-        ftocdm = np.sqrt(((self.coords[-1,0] - mx)**2) + ((self.coords[-1,1] - my)**2))
+        otocdm = np.sqrt(((self.coords[0, 0] - mx) ** 2) + ((self.coords[0, 1] - my) ** 2))
+        ftocdm = np.sqrt(((self.coords[-1, 0] - mx) ** 2) + ((self.coords[-1, 1] - my) ** 2))
         euc = otocdm + ftocdm
-        euc2 = np.sqrt(((self.coords[-1,0] - self.coords[0,0])**2) + ((self.coords[-1,1] - self.coords[0,1])**2))
+        euc2 = np.sqrt(
+            ((self.coords[-1, 0] - self.coords[0, 0]) ** 2) + ((self.coords[-1, 1] - self.coords[0, 1]) ** 2))
         geo = self.geodesic()
 
-        fig = plt.figure(figsize=(20,10))
+        fig = plt.figure(figsize=(20, 10))
         fig.suptitle(self.exer_id)
         ax = fig.add_subplot(111)
         plt.plot(self.coords[:, 0], self.coords[:, 1])
         plt.scatter(self.coords[:, 0], self.coords[:, 1])
         plt.scatter(mx, my, color='r', marker='+')
-        plt.plot([self.coords[0,0], mx], [self.coords[0,1],my], color='r')
-        plt.plot([self.coords[-1,0], mx], [self.coords[-1,1],my], color='r')
+        plt.plot([self.coords[0, 0], mx], [self.coords[0, 1], my], color='r')
+        plt.plot([self.coords[-1, 0], mx], [self.coords[-1, 1], my], color='r')
         ax.set_aspect('equal', 'datalim')
 
         ch = self.cv_hull
-        plt.plot(ch[:,0], ch[:,1], color='g')
+        plt.plot(ch[:, 0], ch[:, 1], color='g')
         if show:
             plt.show()
             plt.close()
         return fig
-
 
     def plot_over_trajectory(self, data):
         """
@@ -272,11 +272,10 @@ class Trajectory:
         ax = fig.add_subplot(111, projection='3d')
 
         for i, d in enumerate(data):
-            plt.plot(self.coords[:,0], self.coords[:,1], d, c=colors[i])
+            plt.plot(self.coords[:, 0], self.coords[:, 1], d, c=colors[i])
         plt.title(self.exer_id)
         plt.show()
         plt.close()
-
 
     def find_begginning_end(self):
         """
@@ -287,36 +286,33 @@ class Trajectory:
         :return:
         """
 
-        chunk = int(self.coords.shape[0]/4.0)
+        chunk = int(self.coords.shape[0] / 4.0)
         vdis = np.zeros(self.coords.shape[0])
         for i in range(1, self.coords.shape[0]):
-            dx = self.coords[i-1, 0] - self.coords[i, 0]
-            dy = self.coords[i-1, 1] - self.coords[i, 1]
-            vdis[i] = np.sqrt((dx*dx) + (dy*dy))
+            dx = self.coords[i - 1, 0] - self.coords[i, 0]
+            dy = self.coords[i - 1, 1] - self.coords[i, 1]
+            vdis[i] = np.sqrt((dx * dx) + (dy * dy))
 
         # Middle third of the distances
-        thresh = np.mean(vdis[chunk:3*chunk])
+        thresh = np.mean(vdis[chunk:3 * chunk])
 
         bg = 0
         for i in range(vdis.shape[0]):
             if vdis[i] > thresh:
-                bg = i-1
+                bg = i - 1
                 break
 
         nd = 0
         for i in range(vdis.shape[0]):
-            if vdis[vdis.shape[0] - i -1] > thresh:
-                nd = vdis.shape[0] - i -1
+            if vdis[vdis.shape[0] - i - 1] > thresh:
+                nd = vdis.shape[0] - i - 1
                 break
 
         return bg, nd, self.distances
 
 
-
-
-
 if __name__ == '__main__':
-    a = np.array([[0,0], [2,0], [2,2], [1,3], [0,2]])
+    a = np.array([[0, 0], [2, 0], [2, 2], [1, 3], [0, 2]])
     tr = Trajectory(a)
 
     print(tr.straightness())

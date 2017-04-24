@@ -19,14 +19,14 @@ Smoothing
 
 __author__ = 'bejar'
 
-
 from scipy.sparse.linalg import spsolve
 import numpy as np
 import scipy as scp
 from scipy import sparse
 from scipy.sparse import linalg
 
-def numpy_smoothing(x,window_len=11,window='hanning'):
+
+def numpy_smoothing(x, window_len=11, window='hanning'):
     """smooth the data using a window with requested size.
 
     This method is based on the convolution of a scaled window with the signal.
@@ -64,25 +64,21 @@ def numpy_smoothing(x,window_len=11,window='hanning'):
     if x.size < window_len:
         raise ValueError("Input vector needs to be bigger than window size.")
 
-
-    if window_len<3:
+    if window_len < 3:
         return x
-
 
     if not window in ['flat', 'hanning', 'hamming', 'bartlett', 'blackman']:
         raise ValueError("Window is on of 'flat', 'hanning', 'hamming', 'bartlett', 'blackman'")
 
-
-    s=np.r_[x[window_len-1:0:-1],x,x[-1:-window_len:-1]]
-    #print(len(s))
-    if window == 'flat': #moving average
-        w = np.ones(window_len,'d')
+    s = np.r_[x[window_len - 1:0:-1], x, x[-1:-window_len:-1]]
+    # print(len(s))
+    if window == 'flat':  # moving average
+        w = np.ones(window_len, 'd')
     else:
-        w = eval('np.'+window+'(window_len)')
+        w = eval('np.' + window + '(window_len)')
 
-    y = np.convolve(w/w.sum(),s,mode='valid')
-    return y[(window_len/2):(-window_len/2)+1]
-
+    y = np.convolve(w / w.sum(), s, mode='valid')
+    return y[(window_len / 2):(-window_len / 2) + 1]
 
 
 def ALS_smoothing(y, lam, p, niter=10):
@@ -113,8 +109,8 @@ def ALS_smoothing(y, lam, p, niter=10):
     for i in range(niter):
         W = sparse.spdiags(w, 0, L, L)
         Z = W + lam * D.dot(D.transpose())
-        z = spsolve(Z, w*y)
-        w = p * (y > z) + (1-p) * (y < z)
+        z = spsolve(Z, w * y)
+        w = p * (y > z) + (1 - p) * (y < z)
     return z
 
 
@@ -176,13 +172,13 @@ def tvdip(y, lambdas, display=1, stoptol=1e-3, maxiter=60):
     """
 
     # Search tuning parameters
-    ALPHA = 0.01    # Backtracking linesearch parameter (0,0.5]
-    BETA = 0.5      # Backtracking linesearch parameter (0,1)
+    ALPHA = 0.01  # Backtracking linesearch parameter (0,0.5]
+    BETA = 0.5  # Backtracking linesearch parameter (0,1)
     MAXLSITER = 20  # Max iterations of backtracking linesearch
-    MU = 2          # t update
+    MU = 2  # t update
 
     N = y.size  # Length of input signal y
-    M = N - 1   # Size of Dx
+    M = N - 1  # Size of Dx
 
     # Construct sparse operator matrices
     I1 = sparse.eye(M)
@@ -220,7 +216,7 @@ def tvdip(y, lambdas, display=1, stoptol=1e-3, maxiter=60):
         s[idx] = 1
 
         if display:
-            print("Solving for lambda={0:5.2e}, lambda/lambda_max={1:5.2e}".format(l, l/lambdamax))
+            print("Solving for lambda={0:5.2e}, lambda/lambda_max={1:5.2e}".format(l, l / lambdamax))
             print("Iter# primal    Dual    Gap")
 
         for iters in range(maxiter):
@@ -229,10 +225,10 @@ def tvdip(y, lambdas, display=1, stoptol=1e-3, maxiter=60):
             w = Dy - (mu1 - mu2)
 
             # Calculate objectives and primal-dual gap
-            pobj1 = 0.5*w.conj().T.dot(linalg.spsolve(DDT,w))+l*(np.sum(mu1+mu2))
-            pobj2 = 0.5*DTz.conj().T.dot(DTz)+l*np.sum(np.absolute(Dy-DDTz))
+            pobj1 = 0.5 * w.conj().T.dot(linalg.spsolve(DDT, w)) + l * (np.sum(mu1 + mu2))
+            pobj2 = 0.5 * DTz.conj().T.dot(DTz) + l * np.sum(np.absolute(Dy - DDTz))
             pobj = np.minimum(pobj1, pobj2)
-            dobj = -0.5*DTz.conj().T.dot(DTz) + Dy.conj().T.dot(z)
+            dobj = -0.5 * DTz.conj().T.dot(DTz) + Dy.conj().T.dot(z)
             gap = pobj - dobj
             if display:
                 print("{:5d} {:7.2e} {:7.2e} {:7.2e}".format(iters, pobj[0, 0],
@@ -240,25 +236,25 @@ def tvdip(y, lambdas, display=1, stoptol=1e-3, maxiter=60):
                                                              gap[0, 0]))
 
             # Test duality gap stopping criterion
-            if np.all(gap <= stoptol): # ****
+            if np.all(gap <= stoptol):  # ****
                 s[idx] = 1
                 break
 
             if step >= 0.2:
-                t = np.maximum(2*M*MU/gap, 1.2*t)
+                t = np.maximum(2 * M * MU / gap, 1.2 * t)
 
             # Do Newton step
             rz = DDTz - w
-            Sdata = (mu1/f1 + mu2/f2)
-            S = DDT-sparse.csc_matrix((Sdata.reshape(Sdata.size),
-                                      (np.arange(M), np.arange(M))))
-            r = -DDTz + Dy + (1/t)/f1 - (1/t)/f2
+            Sdata = (mu1 / f1 + mu2 / f2)
+            S = DDT - sparse.csc_matrix((Sdata.reshape(Sdata.size),
+                                         (np.arange(M), np.arange(M))))
+            r = -DDTz + Dy + (1 / t) / f1 - (1 / t) / f2
             dz = linalg.spsolve(S, r).reshape(r.size, 1)
-            dmu1 = -(mu1+((1/t)+dz*mu1)/f1)
-            dmu2 = -(mu2+((1/t)-dz*mu2)/f2)
+            dmu1 = -(mu1 + ((1 / t) + dz * mu1) / f1)
+            dmu2 = -(mu2 + ((1 / t) - dz * mu2) / f2)
 
             resDual = rz.copy()
-            resCent = np.vstack((-mu1*f1-1/t, -mu2*f2-1/t))
+            resCent = np.vstack((-mu1 * f1 - 1 / t, -mu2 * f2 - 1 / t))
             residual = np.vstack((resDual, resCent))
 
             # Perform backtracking linesearch
@@ -267,26 +263,26 @@ def tvdip(y, lambdas, display=1, stoptol=1e-3, maxiter=60):
             step = 1
             if np.any(negIdx1):
                 step = np.minimum(step,
-                                  0.99*(-mu1[negIdx1]/dmu1[negIdx1]).min(0))
+                                  0.99 * (-mu1[negIdx1] / dmu1[negIdx1]).min(0))
             if np.any(negIdx2):
                 step = np.minimum(step,
-                                  0.99*(-mu2[negIdx2]/dmu2[negIdx2]).min(0))
+                                  0.99 * (-mu2[negIdx2] / dmu2[negIdx2]).min(0))
 
             for _ in range(MAXLSITER):
-                newz = z + step*dz
-                newmu1 = mu1 + step*dmu1
-                newmu2 = mu2 + step*dmu2
+                newz = z + step * dz
+                newmu1 = mu1 + step * dmu1
+                newmu2 = mu2 + step * dmu2
                 newf1 = newz - l
                 newf2 = -newz - l
 
                 # Update residuals
                 newResDual = DDT.dot(newz) - Dy + newmu1 - newmu2
-                newResCent = np.vstack((-newmu1*newf1-1/t, -newmu2*newf2-1/t))
+                newResCent = np.vstack((-newmu1 * newf1 - 1 / t, -newmu2 * newf2 - 1 / t))
                 newResidual = np.vstack((newResDual, newResCent))
 
                 if (np.maximum(newf1.max(0), newf2.max(0)) < 0
                     and (scp.linalg.norm(newResidual) <=
-                        (1-ALPHA*step)*scp.linalg.norm(residual))):
+                                 (1 - ALPHA * step) * scp.linalg.norm(residual))):
                     break
 
                 step = BETA * step
@@ -298,9 +294,9 @@ def tvdip(y, lambdas, display=1, stoptol=1e-3, maxiter=60):
             f1 = newf1
             f2 = newf2
 
-        x[:, idx] = (y-D.conj().T.dot(z)).reshape(x.shape[0])
+        x[:, idx] = (y - D.conj().T.dot(z)).reshape(x.shape[0])
         xval = x[:, idx].reshape(x.shape[0], 1)
-        E[idx] = 0.5*np.sum((y-xval)**2)+l*np.sum(np.absolute(D.dot(xval)))
+        E[idx] = 0.5 * np.sum((y - xval) ** 2) + l * np.sum(np.absolute(D.dot(xval)))
 
         # We may have a close solution that does not satisfy the duality gap
         if iters >= maxiter:

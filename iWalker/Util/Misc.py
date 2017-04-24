@@ -22,6 +22,27 @@ __author__ = 'bejar'
 from pylab import *
 import matplotlib.pyplot as plt
 import numpy as np
+from iWalker.Util import ALS_smoothing
+from scipy.signal import argrelextrema
+
+def extract_extrema(signal, smoothed=True):
+    """
+    Return a vector with only the extrema
+    :param signal:
+    :return:
+    """
+    if smoothed:
+        smthsigx = ALS_smoothing(signal, 1, 0.1)
+    else:
+        smthsigx = signal
+
+    smax = argrelextrema(smthsigx, np.greater_equal, order=3)
+    smin = argrelextrema(smthsigx, np.less_equal, order=3)
+    vext = np.array([np.nan] * len(signal))
+    vext[smax] = smthsigx[smax]
+    vext[smin] = smthsigx[smin]
+    return vext.copy()
+
 
 def show_list_signals(signals, legend=[]):
     """

@@ -22,6 +22,8 @@ __author__ = 'bejar'
 from .MFT import mft
 from .BOSS import Boss, boss_distance, euclidean_distance, bin_hamming_distance, hamming_distance, cosine_similarity
 from .STFT import stft
+from .Smoothing import ALS_smoothing
+from .Misc import extract_extrema
 
 __all__ = ['mft', 'Boss', 'stft', 'boss_distance', 'euclidean_distance', 'hamming_distance', 'bin_hamming_distance',
-           'cosine_similarity']
+           'cosine_similarity', 'ALS_smoothing', 'extract_extrema']

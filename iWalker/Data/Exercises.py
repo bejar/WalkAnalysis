@@ -17,15 +17,14 @@ Exercises
 
 """
 
-
 from pymongo import MongoClient
 from iWalker.Private.Connection import mongoserver, mongopass, mongouser
 from iWalker.Data import Exercise, Trajectory
 
 __author__ = 'bejar'
 
-class Exercises:
 
+class Exercises:
     header = 'lhfx,lhfy,lhfz,rhfx,rhfy,rhfz,lnf,rnf,acc,magn,gyro,hbl,hbr,epx,epy,epo,ls,rs'
 
     def __init__(self):
@@ -98,8 +97,10 @@ class Exercises:
         for ex in exer.edict:
             self.edict[ex] = exer.edict[ex]
 
+
 if __name__ == '__main__':
     from iWalker.Data import Trajectory
+
     p = Exercises()
     p.from_db(pilot='FSL')
     # p2 = Exercises()

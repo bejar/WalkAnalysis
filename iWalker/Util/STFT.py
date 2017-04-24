@@ -19,9 +19,9 @@ SFFT
 
 __author__ = 'bejar'
 
-
 import scipy
 import numpy as np
+
 
 def stft(x, fftsize=1024, overlap=4, ban=0):
     """
@@ -34,11 +34,11 @@ def stft(x, fftsize=1024, overlap=4, ban=0):
     :return:
     """
     hop = int(fftsize / overlap)
-    w = scipy.hanning(fftsize+1)[:-1]      # better reconstruction with this trick +1)[:-1]
+    w = scipy.hanning(fftsize + 1)[:-1]  # better reconstruction with this trick +1)[:-1]
     l = []
-    for i in range(0, len(x)-fftsize, hop):
-        v = np.fft.rfft(w*x[i:i+fftsize])
+    for i in range(0, len(x) - fftsize, hop):
+        v = np.fft.rfft(w * x[i:i + fftsize])
         for j in range(ban):
             v[j] = 0
-        l.append(np.abs(v)**2/np.max(np.abs(v)**2))
+        l.append(np.abs(v) ** 2 / np.max(np.abs(v) ** 2))
     return np.array(l)

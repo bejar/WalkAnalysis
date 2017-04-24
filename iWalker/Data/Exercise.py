@@ -51,13 +51,13 @@ class Exercise:
         if self.user.exist_attr('Exercise'):
             self.etype = self.user.get_attr('Exercise')
 
-        self.frame = pd.read_csv(dfile+'.csv', sep=',')
+        self.frame = pd.read_csv(dfile + '.csv', sep=',')
 
     def from_db(self, id):
         client = MongoClient(mongoserverlocal)
         db = client.IWalker
         col = db['Exercises']
-        c = col.find_one({'Unix Time':id})
+        c = col.find_one({'Unix Time': id})
 
         self.id = id
         self.frame = pd.read_csv(StringIO(c['csv']), sep=',')
@@ -72,7 +72,8 @@ class Exercise:
         :return:
         """
         return np.column_stack((self.frame['epx'], self.frame['epy']
-                         ))
+                                ))
+
     def get_forces(self):
         """
         Coordinates of the exercise
@@ -80,7 +81,7 @@ class Exercise:
         """
         return np.column_stack((self.frame['lhfx'], self.frame['lhfy'], self.frame['lhfz'],
                                 self.frame['rhfx'], self.frame['rhfy'], self.frame['rhfz']
-                         ))
+                                ))
 
     def classify(self, criteria):
         """
@@ -94,7 +95,7 @@ class Exercise:
         """
 
         if criteria == 'speed':
-            diff = np.array(self.frame['rs'])-np.array(self.frame['ls'])
+            diff = np.array(self.frame['rs']) - np.array(self.frame['ls'])
             sdiff = np.sum(diff)
             if sdiff < -500:
                 print('Der', sdiff)
@@ -102,8 +103,6 @@ class Exercise:
                 print('Izq', sdiff)
             else:
                 print('Straight', sdiff)
-
-
 
     def compute_speed(self, mtime):
         """
@@ -114,11 +113,7 @@ class Exercise:
         """
 
         self.speeds = np.zeros(len(self.frame['epx']))
-        for i in range(len(self.frame['epx'])-1):
-            self.speeds[i] = np.sqrt(((self.frame.loc[i,'epx']-self.frame.loc[i+1,'epx'])**2)+
-                                     ((self.frame.loc[i,'epx']-self.frame.loc[i+1,'epx'])**2))/mtime
+        for i in range(len(self.frame['epx']) - 1):
+            self.speeds[i] = np.sqrt(((self.frame.loc[i, 'epx'] - self.frame.loc[i + 1, 'epx']) ** 2) +
+                                     ((self.frame.loc[i, 'epx'] - self.frame.loc[i + 1, 'epx']) ** 2)) / mtime
         return self.speeds
-
-
-
-

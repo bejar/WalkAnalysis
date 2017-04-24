@@ -69,6 +69,7 @@ def euclidean_distance(histo1, histo2):
 
     return val
 
+
 def cosine_similarity(histo1, histo2):
     """
     Euclidean distance between two histograms
@@ -87,7 +88,8 @@ def cosine_similarity(histo1, histo2):
     for w in histo2:
         norm2 += histo2[w] ** 2
 
-    return val/(np.sqrt(norm1) * np.sqrt(norm2))
+    return val / (np.sqrt(norm1) * np.sqrt(norm2))
+
 
 def hamming_distance(histo1, histo2):
     """
@@ -112,6 +114,7 @@ def hamming_distance(histo1, histo2):
 
     return val
 
+
 def bin_hamming_distance(histo1, histo2):
     """
     jaccard distance between two histograms
@@ -129,6 +132,7 @@ class Boss():
     """
     Computes the BOSS words for a dictionary of series
     """
+
     def __init__(self, dseries, sampling, butfirst=False):
         """
 
@@ -156,8 +160,8 @@ class Boss():
             coefs = mft(self.series[s], self.sampling, ncoef, wsize, butfirst=self.butfirst)
             lcoefs = []
             for i in range(coefs.shape[1]):
-                lcoefs.append(coefs[:,i].real)
-                lcoefs.append(coefs[:,i].imag)
+                lcoefs.append(coefs[:, i].real)
+                lcoefs.append(coefs[:, i].imag)
 
             all_coefs.append(np.stack(lcoefs, axis=-1))
             self.coefs[s] = all_coefs[-1]
@@ -174,6 +178,7 @@ class Boss():
         :return:
         """
         vocabulary = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
         def word(vec):
             """
 
@@ -189,7 +194,7 @@ class Boss():
             sdisc = self.disc.transform(self.coefs[c], copy=True).real
             prevw = word(sdisc[0])
             lvoc = [prevw]
-            for i in range(1,sdisc.shape[0]):
+            for i in range(1, sdisc.shape[0]):
                 nword = word(sdisc[i])
                 if nword != prevw:
                     lvoc.append(nword)
@@ -201,6 +206,7 @@ class Boss():
 if __name__ == '__main__':
     from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
     from iWalker.Util.Misc import show_list_signals
+
     p = Pacientes()
     e = Exercises()
     p.from_db(pilot='NOGA')
@@ -219,7 +225,3 @@ if __name__ == '__main__':
     boss = Boss(dseries, 10)
     boss.discretization_intervals(ncoefs, wlen, voclen)
     boss.discretize()
-
-
-
-
