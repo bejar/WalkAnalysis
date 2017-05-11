@@ -17,7 +17,6 @@ Boss_spectral
 
 """
 
-__author__ = 'bejar'
 
 
 from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
@@ -30,6 +29,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn.mixture import BayesianGaussianMixture as Dirichlet
 import matplotlib.colors as colors
+from sklearn.metrics import silhouette_score
+__author__ = 'bejar'
 
 # colors = "rgbymcykrgbymcyk"
 
@@ -44,7 +45,7 @@ if __name__ == '__main__':
 
     wlen = 128
     voclen = 3
-    ncoefs = 5
+    ncoefs = 8
 
     nseries = 0
     lcl = []
@@ -81,7 +82,7 @@ if __name__ == '__main__':
         boss = Boss(dseries, 10, butfirst=True)
         boss.discretization_intervals(ncoefs, wlen, voclen)
         boss.discretize()
-        lcodes = list(boss.codes.keys())
+        lcodes = sorted(list(boss.codes.keys()))
         for i in range(len(lcodes)):
             for j in range(i+1, len(lcodes)):
                 # mdist[i,j] += bin_hamming_distance(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
@@ -90,11 +91,11 @@ if __name__ == '__main__':
                 mdist[j, i] = mdist[i,j]
                 # mdist[i,j] += (boss_distance(boss.codes[v1], boss.codes[v2]) + boss_distance(boss.codes[v2], boss.codes[v1]))/2
 
-    lexer = list(boss.codes.keys())
+    lexer = sorted(list(boss.codes.keys()))
 
     mdist /= np.max(mdist)
     fdata = mdist
-    imap = SpectralEmbedding(n_components=2, affinity='precomputed')
+    imap = SpectralEmbedding(n_components=3, affinity='precomputed')
     fdata = imap.fit_transform(fdata)
 
     # fig = plt.figure(figsize=(10, 10))
@@ -114,14 +115,14 @@ if __name__ == '__main__':
     print(np.unique(lab))
 
     fig = plt.figure(figsize=(10, 10))
-    # ax = fig.add_subplot(111, projection='3d')
-    ax = fig.add_subplot(111)
-
-
-    # plt.scatter(fdata[:, 0], fdata[:, 1], zs=fdata[:, 2], depthshade=False, s=100, c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet') )
-    plt.scatter(fdata[:, 0], fdata[:, 1], c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet'))
+    ax = fig.add_subplot(111, projection='3d')
+    # ax = fig.add_subplot(111)
+    plt.scatter(fdata[:, 0], fdata[:, 1], zs=fdata[:, 2], depthshade=False, s=100, c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet') )
+    # plt.scatter(fdata[:, 0], fdata[:, 1], c=lab/len(np.unique(lab)), cmap=plt.get_cmap('jet'))
     plt.colorbar()
     plt.show()
+
+    print('Silhouette=', silhouette_score(fdata, dp.predict(fdata)))
 
     # classes = {}
     # for i in np.unique(lab):

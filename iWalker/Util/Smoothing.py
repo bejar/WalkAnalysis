@@ -78,7 +78,7 @@ def numpy_smoothing(x, window_len=11, window='hanning'):
         w = eval('np.' + window + '(window_len)')
 
     y = np.convolve(w / w.sum(), s, mode='valid')
-    return y[(window_len / 2):(-window_len / 2) + 1]
+    return y[int(window_len / 2):int(-window_len / 2) + 1]
 
 
 def ALS_smoothing(y, lam, p, niter=10):
