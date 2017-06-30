@@ -32,6 +32,13 @@ class Exercise:
     Class representing the data from an exercise
     """
 
+    uid = None
+    id = None
+    frame = None
+    lamb = None
+    etype = None
+    speeds = None
+
     def __init__(self):
         pass
 
