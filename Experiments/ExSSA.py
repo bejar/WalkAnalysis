@@ -29,9 +29,9 @@ from scipy.linalg import hankel, svd
 from sklearn.decomposition import PCA
 import seaborn as sns
 from iWalker.Util.SSA import SSA
+from sklearn.decomposition import FastICA
 
 __author__ = 'bejar'
-
 
 if __name__ == '__main__':
 
@@ -44,39 +44,90 @@ if __name__ == '__main__':
         if t.straightness()[0] < 0.95:
             e.delete_exercises([ex.id])
 
-    e1 = e.iterator()
+    R = 5
+    for ej in e.iterator():
 
-    ej = next(e1)
+        L = 10
+        mdata2 = np.array(ej.get_forces()[:, 4]-ej.get_forces()[:, 5], dtype=float)
+        # print (np.mean(mdata2))
+        mdata2 -= np.mean(mdata2)
+        ssa = SSA(n_components=L)
 
-    L = 20
-    mdata2 = np.array(ej.get_forces()[:, 1], dtype=float)
-    # print (np.mean(mdata2))
-    mdata2 -= np.mean(mdata2)
-    ssa = SSA(n_components=L)
+        ssa.fit(mdata2)
 
-    ssa.fit(mdata2)
+        # fig = plt.figure(figsize=(60, 20))
+        # ax = fig.add_subplot(111)
+        # plt.plot(ssa.explained, 'r')
+        #
+        # plt.show()
 
-    fig = plt.figure(figsize=(60, 20))
-    ax = fig.add_subplot(111)
-    plt.plot(ssa.explained, 'r')
+        lseries = np.array(ssa.decomposition(range(L)))
+        print(lseries.shape)
 
-    plt.show()
+        # sseries = np.zeros(lseries[0].shape)
+        fig = plt.figure(figsize=(40, 80))
 
-    lseries = ssa.decomposition(range(L))
+        nrow = int(L / 2) + 1 if L % 2 == 0 else int(L / 2) + 2
+        for i in range(0, L, 2):
+            ax = fig.add_subplot(nrow, 2, i + 1)
+            plt.title(str(i) + ' ' + str(ssa.explained[i]))
+            plt.plot(lseries[i], 'r')
+            if i + 1 < len(lseries):
+                ax = fig.add_subplot(nrow, 2, i + 2)
+                plt.title(str(i + 1) + ' - ' + str(ssa.explained[i + 1]))
+                plt.plot(lseries[i + 1], 'r')
 
-    # sseries = np.zeros(lseries[0].shape)
-    # for i in range(L):
-    #     fig = plt.figure(figsize=(60, 20))
-    #     ax = fig.add_subplot(111)
-    #
-    #     sseries += lseries[i]
-    #     plt.plot(lseries[i], 'r')
-    #     plt.plot(mdata2, 'b')
-    #     plt.show()
-    aseries = np.array(lseries)
-    corrmat = np.corrcoef(aseries)
-    fig = plt.figure(figsize=(60, 20))
-    ax = fig.add_subplot(111)
-    sns.heatmap(corrmat, square=True)
-    plt.show()
+        ax = fig.add_subplot(nrow, 2, L + 1)
+        plt.plot(mdata2, 'b')
 
+        ax = fig.add_subplot(nrow, 2, L + 2)
+        # plt.plot(ssa.reconstruct(R), 'b')
+        # plt.plot(np.log(ssa.s), 'r')
+        # plt.plot(ssa.explained, 'r')
+        exp = 0
+        rec = np.zeros(mdata2.shape[0])
+        j = 0
+        while exp < 0.9:
+            rec += lseries[j]
+            exp += ssa.explained[j]
+            j += 1
+        plt.plot(rec, 'r')
+        # for i in range(L):
+        #     rec += lseries[i]
+        #     plt.plot(rec)
+        #
+        #     sseries += lseries[i]
+        #     plt.plot(lseries[i], 'r')
+        #     plt.plot(mdata2, 'b')
+        plt.show()
+
+
+        L=4
+        fica = FastICA(n_components=L)
+
+        lseries = fica.fit_transform(lseries.T)
+        print(lseries.shape)
+        fig = plt.figure(figsize=(40, 80))
+
+        nrow = int(L / 2) + 1 if L % 2 == 0 else int(L / 2) + 2
+        for i in range(0, L, 2):
+            ax = fig.add_subplot(nrow, 2, i + 1)
+            plt.title(str(i) + ' ' + str(ssa.explained[i]))
+            plt.plot(lseries[:,i], 'r')
+            if i + 1 < lseries.shape[1]:
+                ax = fig.add_subplot(nrow, 2, i + 2)
+                plt.title(str(i + 1) + ' - ' + str(ssa.explained[i + 1]))
+                plt.plot(lseries[:,i + 1], 'r')
+
+        ax = fig.add_subplot(nrow, 2, L + 1)
+        plt.plot(mdata2, 'b')
+        ax = fig.add_subplot(nrow, 2, L + 2)
+        plt.plot(lseries[:,0] + lseries[:,1], 'r')
+
+        plt.show()
+        # aseries = np.array(lseries)
+        # corrmat = np.corrcoef(aseries)
+        # fig = plt.figure(figsize=(20, 20))
+        # ax = fig.add_subplot(111)
+        # sns.heatmap(corrmat, square=True)
+        # plt.show()

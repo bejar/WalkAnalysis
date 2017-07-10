@@ -29,7 +29,9 @@ class SSA:
     n_components = 4
     Xi = None
     explained = None
+    s = None
     length = 0
+    components = None
 
     def __init__(self, n_components):
         """
@@ -38,7 +40,6 @@ class SSA:
         """
         self.n_components = n_components
 
-
     def fit(self, X):
         """
         Computes the embedding X is the time series
@@ -46,21 +47,23 @@ class SSA:
         :param X:
         :return:
         """
-        if  not(2 <= self.n_components < X.shape[0]):
+        if not (2 <= self.n_components < X.shape[0]):
             raise NameError('Series too short')
 
         self.length = X.shape[0]
-        X = np.concatenate((X,np.zeros(self.n_components-1)))
+        X = np.concatenate((X, np.zeros(self.n_components - 1)))
 
-        mSSA = hankel(X[0:self.n_components], X[self.n_components-1:])
+        mSSA = hankel(X[0:self.n_components], X[self.n_components - 1:])
 
-        mSSA2 = np.dot(mSSA,mSSA.T)
+        mSSA2 = np.dot(mSSA, mSSA.T)
 
         U, s, _ = svd(mSSA2)
 
+        self.s = s
+
         self.explained = np.zeros(s.shape)
         for i in range(self.explained.shape[0]):
-            self.explained[i] = s[i]/np.sum(s)
+            self.explained[i] = s[i] / np.sum(s)
 
         lVi = []
         for i in range(self.n_components):
@@ -71,7 +74,6 @@ class SSA:
             lXi.append(np.sqrt(s[i]) * np.outer(U[i], lVi[i].T))
 
         self.Xi = lXi
-
 
     # TODO: error checking
     def decomposition(self, groups):
@@ -93,25 +95,29 @@ class SSA:
                 raise NameError('groups list incorrect')
             tmp = np.zeros(self.length)
             for k in range(self.length):
-                if k < Xg.shape[0]-1:
+                if k < Xg.shape[0] - 1:
                     val = 0.0
-                    for m in range(k+1):
-                        val += Xg[m,k-m]
-                    tmp[k] = val/(k+1)
+                    for m in range(k + 1):
+                        val += Xg[m, k - m]
+                    tmp[k] = val / (k + 1)
                 elif k < Xg.shape[1]:
                     val = 0.0
                     for m in range(Xg.shape[0]):
-                        val += Xg[m,k-m]
-                    tmp[k] = val/Xg.shape[0]
+                        val += Xg[m, k - m]
+                    tmp[k] = val / Xg.shape[0]
                 else:
                     val = 0.0
-                    for m in range(k-Xg.shape[1]+1, self.length-Xg.shape[1]+1):
-                        val += Xg[m,k-m]
-                    tmp[k] = val/(self.length-Xg.shape[1])
+                    for m in range(k - Xg.shape[1] + 1, self.length - Xg.shape[1] + 1):
+                        val += Xg[m, k - m]
+                    tmp[k] = val / (self.length - Xg.shape[1])
             ldecomp.append(tmp)
-
+        self.components = np.array(ldecomp)
         return ldecomp
 
-
-
-
+    def reconstruct(self, n):
+        """
+        Reconstructs the signal using n components
+        :param n:
+        :return:
+        """
+        return np.sum(self.components[0:n, ], axis=0)
