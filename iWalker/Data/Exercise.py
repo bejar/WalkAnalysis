@@ -23,6 +23,7 @@ from iWalker.Private.Connection import mongoserverlocal
 from io import StringIO
 from iWalker.Data import User
 import numpy as np
+import matplotlib.pyplot as plt
 
 __author__ = 'bejar'
 
@@ -124,3 +125,25 @@ class Exercise:
             self.speeds[i] = np.sqrt(((self.frame.loc[i, 'epx'] - self.frame.loc[i + 1, 'epx']) ** 2) +
                                      ((self.frame.loc[i, 'epx'] - self.frame.loc[i + 1, 'epx']) ** 2)) / mtime
         return self.speeds
+
+    def show_exercise(self):
+        """
+        Plots the forces of an exercise
+        :return:
+        """
+        fig = plt.figure(figsize=(60, 20))
+        ax = fig.add_subplot(111)
+        plt.plot(range(len(self.frame)), self.frame['rhfz'], c='r')
+        plt.plot(range(len(self.frame)), self.frame['lhfz'], c='b')
+        plt.plot(range(len(self.frame)), self.frame['lhfx'], c='g')
+        plt.plot(range(len(self.frame)), self.frame['rhfx'], c='y')
+        plt.plot(range(len(self.frame)), self.frame['lhfy'], c='b')
+        plt.plot(range(len(self.frame)), self.frame['rhfy'], c='k')
+        plt.show()
+
+if __name__ == '__main__':
+    from iWalker.Data import Trajectory
+
+    p = Exercise()
+    p.from_db(1424971539)
+    p.show_exercise()
