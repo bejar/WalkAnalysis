@@ -40,59 +40,71 @@ if __name__ == '__main__':
 
     p.from_db(pilot='NOGALES')
     e.from_db(pilot='NOGALES')
+    e.delete_exercises([1424971539, 1424968950])
+    e.delete_exercises([1425290750, 1425376956, 1425486861, 1425484520])
 
     # e.delete_exercises([1425290750])
-    wlen = 128
-    for ex in e.iterator():
-        t = Trajectory(ex.get_coordinates())
-        if t.straightness()[0] < 0.95:
-            e.delete_exercises([ex.id])
-    nseries = 0
-    for ex in e.iterator():
-        forces = ex.get_forces()
-        if forces.shape[0] > wlen:
-            nseries += 1
-        else:
-            e.delete_exercises([ex.id])
 
-    for voclen, ncoefs in product([3,4,5,6],[3,4,5,6, 7, 8]):
-        print('VOCL=', voclen)
-        print('NCOEFS=', ncoefs)
+    for wlen in [128]:
+        # wlen = 128
+        print('*'*20)
+        print('WLEN=', wlen)
+        for ex in e.iterator():
+            t = Trajectory(ex.get_coordinates())
+            if t.straightness()[0] < 0.95:
+                e.delete_exercises([ex.id])
+        nseries = 0
+        for ex in e.iterator():
+            forces = ex.get_forces()
+            if forces.shape[0] > wlen:
+                nseries += 1
+            else:
+                e.delete_exercises([ex.id])
 
-        mdist = np.zeros((nseries, nseries))
+        for voclen, ncoefs in product([6],[3,4,5,6, 7, 8]):
+            print('-'*20)
+            print('VOCL=', voclen)
+            print('NCOEFS=', ncoefs)
 
-        for f in [0,1,2,3,4,5]:
-            dseries = {}
-            for ex in e.iterator():
-                forces = ex.get_forces()
-                if forces.shape[0] > wlen:
-                    dseries[str(ex.uid) + '#' + str(ex.id)] = forces[:, f]
+            mdist = np.zeros((nseries, nseries))
 
-            boss = Boss(dseries, 10, butfirst=True)
-            boss.discretization_intervals(ncoefs, wlen, voclen)
-            boss.discretize()
-            lcodes = list(boss.codes.keys())
-            for i in range(len(lcodes)):
-                for j in range(i+1, len(lcodes)):
-                    # mdist[i,j] += bin_hamming_distance(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
-                    # mdist[i,j] += euclidean_distance(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
-                    mdist[i,j] += cosine_similarity(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
-                    mdist[j, i] = mdist[i,j]
-                    # mdist[i,j] += (boss_distance(boss.codes[v1], boss.codes[v2]) + boss_distance(boss.codes[v2], boss.codes[v1]))/2
+            for f in [0,1,2,3,4,5]:
+                dseries = {}
+                for ex in e.iterator():
+                    forces = ex.get_forces()
+                    trajec = Trajectory(np.array(ex.frame.loc[:, ['epx', 'epy']]), exer=ex.uid + ' ' + str(ex.id))
+                    beg, nd, _ = trajec.find_begginning_end()
+                    if forces.shape[0] > (wlen*1.5) and (nd - beg) > (wlen*1.5):
+                        dseries[str(ex.uid) + '#' + str(ex.id)] = forces[beg:nd, f]
 
-        lexer = list(boss.codes.keys())
+                    # if forces.shape[0] > wlen:
+                    #     dseries[str(ex.uid) + '#' + str(ex.id)] = forces[:, f]
 
-        mdist /= np.max(mdist)
-        fdata = mdist
-        for comp in range(2, 11):
-            imap = SpectralEmbedding(n_components=comp, affinity='precomputed')
-            fdatat = imap.fit_transform(fdata)
+                boss = Boss(dseries, 10, butfirst=True)
+                boss.discretization_intervals(ncoefs, wlen, voclen)
+                boss.discretize()
+                lcodes = list(boss.codes.keys())
+                for i in range(len(lcodes)):
+                    for j in range(i+1, len(lcodes)):
+                        # mdist[i,j] += bin_hamming_distance(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
+                        # mdist[i,j] += euclidean_distance(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
+                        mdist[i,j] += cosine_similarity(boss.codes[lcodes[i]], boss.codes[lcodes[j]])
+                        mdist[j, i] = mdist[i,j]
+                        # mdist[i,j] += (boss_distance(boss.codes[v1], boss.codes[v2]) + boss_distance(boss.codes[v2], boss.codes[v1]))/2
 
-            dp = Dirichlet(n_components=20)
+            lexer = list(boss.codes.keys())
 
-            dp.fit(fdatat)
+            mdist /= np.max(mdist)
+            fdata = mdist
+            for comp in range(2, 11):
+                imap = SpectralEmbedding(n_components=comp, affinity='precomputed')
+                fdatat = imap.fit_transform(fdata)
 
-            lab = dp.predict(fdatat)
-            print('Comp=', comp, 'Silhouette=', silhouette_score(fdatat, lab))
+                dp = Dirichlet(n_components=20)
+
+                dp.fit(fdatat)
+
+                lab = dp.predict(fdatat)
+                print('Comp=', comp, 'NCL=', len(np.unique(lab)), 'Silhouette=', silhouette_score(fdatat, lab))
 
 

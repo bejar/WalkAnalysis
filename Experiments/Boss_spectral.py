@@ -42,10 +42,14 @@ if __name__ == '__main__':
     e.from_db(pilot='NOGALES')
 
     e.delete_exercises([1424971539, 1424968950])
+    e.delete_exercises([1425290750, 1425376956, 1425486861, 1425484520])
+
+    # e.delete_exercises([1425376956, 1425486861, 1425571115, 1425487748, 1425571166, 1425571388,
+    #                     1424968992, 1424969366, 1424969549])
 
     wlen = 64
-    voclen = 3
-    ncoefs = 6
+    voclen = 4
+    ncoefs = 4
 
     nseries = 0
     lcl = []
@@ -59,7 +63,7 @@ if __name__ == '__main__':
 
     for ex in e.iterator():
         forces = ex.get_forces()
-        if forces.shape[0] > (wlen*3):
+        if forces.shape[0] > (wlen*1.5):
             nseries += 1
             if 'FSL' in ex.uid:
                 lcl.append('r')
@@ -77,7 +81,7 @@ if __name__ == '__main__':
             forces = ex.get_forces()
             trajec = Trajectory(np.array(ex.frame.loc[:, ['epx', 'epy']]), exer=ex.uid + ' ' + str(ex.id))
             beg, nd, _ = trajec.find_begginning_end()
-            if forces.shape[0] > (wlen*3) and (nd - beg) > (wlen*3):
+            if forces.shape[0] > (wlen*1.5) and (nd - beg) > (wlen*1.5):
                 dseries[str(ex.uid) + '#' + str(ex.id)] = forces[beg:nd, f]
 
 
@@ -140,5 +144,19 @@ if __name__ == '__main__':
         eid = ex.split('#')[1]
         classes[i].append((ex.split('#')[0], eid,  e.edict[int(eid)].lamb, len(e.edict[int(eid)].frame)))
 
+    lsets = []
     for i in classes:
         print(sorted(classes[i]))
+        ejset = set()
+        for ei in sorted(classes[i]):
+            ejset.add(ei[0])
+        lsets.append((ejset))
+
+        # if len(classes[i]) < 20:
+        #     for ei in sorted(classes[i]):
+        #         print(ei[0], ei[2], ei[3])
+        #         exi = e.edict[int(ei[1])]
+        #         exi.show_exercise()
+
+    for ejs in lsets:
+        print(sorted(ejs))
