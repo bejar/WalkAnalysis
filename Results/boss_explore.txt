@@ -1,0 +1,1147 @@
+********************
+WLEN= 16
+--------------------
+VOCL= 3
+NCOEFS= 3
+Comp= 2 NCL= 5 Silhouette= 0.338271240644
+Comp= 3 NCL= 9 Silhouette= 0.268344774615
+Comp= 4 NCL= 15 Silhouette= 0.196562223354
+Comp= 5 NCL= 13 Silhouette= 0.197448418497
+Comp= 6 NCL= 19 Silhouette= 0.163675028813
+Comp= 7 NCL= 20 Silhouette= 0.189615802028
+Comp= 8 NCL= 20 Silhouette= 0.155591890804
+Comp= 9 NCL= 20 Silhouette= 0.191434111792
+Comp= 10 NCL= 20 Silhouette= 0.193444218032
+--------------------
+VOCL= 3
+NCOEFS= 4
+Comp= 2 NCL= 5 Silhouette= 0.407411940109
+Comp= 3 NCL= 9 Silhouette= 0.267769555358
+Comp= 4 NCL= 13 Silhouette= 0.205645893596
+Comp= 5 NCL= 14 Silhouette= 0.222800056503
+Comp= 6 NCL= 20 Silhouette= 0.166860567594
+Comp= 7 NCL= 19 Silhouette= 0.201651591258
+Comp= 8 NCL= 20 Silhouette= 0.215436882516
+Comp= 9 NCL= 20 Silhouette= 0.21208672372
+Comp= 10 NCL= 20 Silhouette= 0.229983372483
+--------------------
+VOCL= 3
+NCOEFS= 5
+Comp= 2 NCL= 5 Silhouette= 0.362255771449
+Comp= 3 NCL= 8 Silhouette= 0.308085987591
+Comp= 4 NCL= 10 Silhouette= 0.263037372358
+Comp= 5 NCL= 11 Silhouette= 0.223961168815
+Comp= 6 NCL= 16 Silhouette= 0.176289720753
+Comp= 7 NCL= 18 Silhouette= 0.186034520182
+Comp= 8 NCL= 20 Silhouette= 0.152789228911
+Comp= 9 NCL= 20 Silhouette= 0.14685348959
+Comp= 10 NCL= 20 Silhouette= 0.160238653252
+--------------------
+VOCL= 3
+NCOEFS= 6
+Comp= 2 NCL= 5 Silhouette= 0.421666430197
+Comp= 3 NCL= 8 Silhouette= 0.29220911651
+Comp= 4 NCL= 12 Silhouette= 0.297310259775
+Comp= 5 NCL= 13 Silhouette= 0.209225307418
+Comp= 6 NCL= 18 Silhouette= 0.145912996768
+Comp= 7 NCL= 20 Silhouette= 0.169924025748
+Comp= 8 NCL= 19 Silhouette= 0.142547141755
+Comp= 9 NCL= 20 Silhouette= 0.136234626311
+Comp= 10 NCL= 20 Silhouette= 0.114414101733
+--------------------
+VOCL= 3
+NCOEFS= 7
+Comp= 2 NCL= 5 Silhouette= 0.420291081254
+Comp= 3 NCL= 8 Silhouette= 0.317855342693
+Comp= 4 NCL= 10 Silhouette= 0.201287750774
+Comp= 5 NCL= 16 Silhouette= 0.211364371313
+Comp= 6 NCL= 15 Silhouette= 0.154251987109
+Comp= 7 NCL= 18 Silhouette= 0.149630865468
+Comp= 8 NCL= 19 Silhouette= 0.184292066065
+Comp= 9 NCL= 20 Silhouette= 0.156053194181
+Comp= 10 NCL= 20 Silhouette= 0.147133368245
+--------------------
+VOCL= 3
+NCOEFS= 8
+Comp= 2 NCL= 5 Silhouette= 0.440040646005
+Comp= 3 NCL= 7 Silhouette= 0.331070188843
+Comp= 4 NCL= 10 Silhouette= 0.237736001759
+Comp= 5 NCL= 15 Silhouette= 0.24174382597
+Comp= 6 NCL= 17 Silhouette= 0.227599402531
+Comp= 7 NCL= 20 Silhouette= 0.230051298979
+Comp= 8 NCL= 19 Silhouette= 0.173470733931
+Comp= 9 NCL= 20 Silhouette= 0.168005198124
+Comp= 10 NCL= 20 Silhouette= 0.168763824048
+--------------------
+VOCL= 4
+NCOEFS= 3
+Comp= 2 NCL= 6 Silhouette= 0.343885969179
+Comp= 3 NCL= 8 Silhouette= 0.244061744716
+Comp= 4 NCL= 12 Silhouette= 0.259222306615
+Comp= 5 NCL= 14 Silhouette= 0.22466921142
+Comp= 6 NCL= 18 Silhouette= 0.190225177324
+Comp= 7 NCL= 20 Silhouette= 0.202795013228
+Comp= 8 NCL= 20 Silhouette= 0.219412213228
+Comp= 9 NCL= 20 Silhouette= 0.207909525434
+Comp= 10 NCL= 20 Silhouette= 0.190535340669
+--------------------
+VOCL= 4
+NCOEFS= 4
+Comp= 2 NCL= 5 Silhouette= 0.308913446289
+Comp= 3 NCL= 10 Silhouette= 0.2746276692
+Comp= 4 NCL= 9 Silhouette= 0.257454447707
+Comp= 5 NCL= 13 Silhouette= 0.251085593658
+Comp= 6 NCL= 18 Silhouette= 0.182038411273
+Comp= 7 NCL= 17 Silhouette= 0.212026900371
+Comp= 8 NCL= 18 Silhouette= 0.205463408875
+Comp= 9 NCL= 20 Silhouette= 0.20005833298
+Comp= 10 NCL= 20 Silhouette= 0.226548445154
+--------------------
+VOCL= 4
+NCOEFS= 5
+Comp= 2 NCL= 5 Silhouette= 0.350283240016
+Comp= 3 NCL= 7 Silhouette= 0.402414357898
+Comp= 4 NCL= 12 Silhouette= 0.273412979585
+Comp= 5 NCL= 16 Silhouette= 0.23572787646
+Comp= 6 NCL= 18 Silhouette= 0.215254418927
+Comp= 7 NCL= 19 Silhouette= 0.207777824173
+Comp= 8 NCL= 20 Silhouette= 0.179449422979
+Comp= 9 NCL= 20 Silhouette= 0.170062283829
+Comp= 10 NCL= 20 Silhouette= 0.168499893562
+--------------------
+VOCL= 4
+NCOEFS= 6
+Comp= 2 NCL= 5 Silhouette= 0.528143443031
+Comp= 3 NCL= 9 Silhouette= 0.265611023742
+Comp= 4 NCL= 12 Silhouette= 0.249272477408
+Comp= 5 NCL= 17 Silhouette= 0.251807960159
+Comp= 6 NCL= 20 Silhouette= 0.175400751809
+Comp= 7 NCL= 19 Silhouette= 0.148014804279
+Comp= 8 NCL= 20 Silhouette= 0.113337742982
+Comp= 9 NCL= 20 Silhouette= 0.117771397619
+Comp= 10 NCL= 20 Silhouette= 0.183668465822
+--------------------
+VOCL= 4
+NCOEFS= 7
+Comp= 2 NCL= 4 Silhouette= 0.742035894881
+Comp= 3 NCL= 6 Silhouette= 0.688680389605
+Comp= 4 NCL= 8 Silhouette= 0.581003004308
+Comp= 5 NCL= 10 Silhouette= 0.619972204312
+Comp= 6 NCL= 10 Silhouette= 0.526025588312
+Comp= 7 NCL= 11 Silhouette= 0.496284257643
+Comp= 8 NCL= 13 Silhouette= 0.463069711896
+Comp= 9 NCL= 16 Silhouette= 0.393204995039
+Comp= 10 NCL= 13 Silhouette= 0.237069141658
+--------------------
+VOCL= 4
+NCOEFS= 8
+Comp= 2 NCL= 5 Silhouette= 0.838196149918
+Comp= 3 NCL= 9 Silhouette= 0.746992767145
+Comp= 4 NCL= 10 Silhouette= 0.518299625374
+Comp= 5 NCL= 10 Silhouette= 0.767644513131
+Comp= 6 NCL= 13 Silhouette= 0.60979740874
+Comp= 7 NCL= 12 Silhouette= 0.74882155066
+Comp= 8 NCL= 17 Silhouette= 0.600286260332
+Comp= 9 NCL= 14 Silhouette= 0.631063266981
+Comp= 10 NCL= 15 Silhouette= 0.632558139006
+--------------------
+VOCL= 5
+NCOEFS= 3
+Comp= 2 NCL= 5 Silhouette= 0.43176034217
+Comp= 3 NCL= 7 Silhouette= 0.338815039809
+Comp= 4 NCL= 8 Silhouette= 0.206316206299
+Comp= 5 NCL= 13 Silhouette= 0.148940602551
+Comp= 6 NCL= 18 Silhouette= 0.180162084041
+Comp= 7 NCL= 19 Silhouette= 0.190536404514
+Comp= 8 NCL= 20 Silhouette= 0.226339168211
+Comp= 9 NCL= 20 Silhouette= 0.246232522797
+Comp= 10 NCL= 20 Silhouette= 0.236162165575
+--------------------
+VOCL= 5
+NCOEFS= 4
+Comp= 2 NCL= 5 Silhouette= 0.294248878909
+Comp= 3 NCL= 8 Silhouette= 0.407099607936
+Comp= 4 NCL= 10 Silhouette= 0.255637682122
+Comp= 5 NCL= 12 Silhouette= 0.160139406085
+Comp= 6 NCL= 15 Silhouette= 0.187356424518
+Comp= 7 NCL= 19 Silhouette= 0.170771258749
+Comp= 8 NCL= 19 Silhouette= 0.108773282584
+Comp= 9 NCL= 20 Silhouette= 0.17774114231
+Comp= 10 NCL= 20 Silhouette= 0.197014010667
+--------------------
+VOCL= 5
+NCOEFS= 5
+Comp= 2 NCL= 5 Silhouette= 0.521880524983
+Comp= 3 NCL= 8 Silhouette= 0.354002052109
+Comp= 4 NCL= 12 Silhouette= 0.247146776039
+Comp= 5 NCL= 14 Silhouette= 0.24640040001
+Comp= 6 NCL= 18 Silhouette= 0.198304903293
+Comp= 7 NCL= 19 Silhouette= 0.142228348604
+Comp= 8 NCL= 20 Silhouette= 0.184762504033
+Comp= 9 NCL= 20 Silhouette= 0.155108773446
+Comp= 10 NCL= 20 Silhouette= 0.144426378344
+--------------------
+VOCL= 5
+NCOEFS= 6
+Comp= 2 NCL= 5 Silhouette= 0.773977491084
+Comp= 3 NCL= 6 Silhouette= 0.752579499234
+Comp= 4 NCL= 7 Silhouette= 0.585871989215
+Comp= 5 NCL= 9 Silhouette= 0.561948790063
+Comp= 6 NCL= 12 Silhouette= 0.493085180891
+Comp= 7 NCL= 13 Silhouette= 0.403188054937
+Comp= 8 NCL= 13 Silhouette= 0.437587143565
+Comp= 9 NCL= 13 Silhouette= 0.365603997148
+Comp= 10 NCL= 16 Silhouette= 0.345634886943
+--------------------
+VOCL= 5
+NCOEFS= 7
+Comp= 2 NCL= 6 Silhouette= 0.789916182644
+Comp= 3 NCL= 7 Silhouette= 0.784453488727
+Comp= 4 NCL= 10 Silhouette= 0.794982842739
+Comp= 5 NCL= 13 Silhouette= 0.66692977323
+Comp= 6 NCL= 17 Silhouette= 0.667286837956
+Comp= 7 NCL= 17 Silhouette= 0.63009641592
+Comp= 8 NCL= 18 Silhouette= 0.695324722445
+Comp= 9 NCL= 18 Silhouette= 0.680965197392
+Comp= 10 NCL= 17 Silhouette= 0.655445606311
+--------------------
+VOCL= 5
+NCOEFS= 8
+Comp= 2 NCL= 7 Silhouette= 0.869737591427
+Comp= 3 NCL= 10 Silhouette= 0.850124393145
+Comp= 4 NCL= 11 Silhouette= 0.898700635909
+Comp= 5 NCL= 8 Silhouette= 0.904616549391
+Comp= 6 NCL= 14 Silhouette= 0.865231665842
+Comp= 7 NCL= 16 Silhouette= 0.843170156054
+Comp= 8 NCL= 16 Silhouette= 0.864617883051
+Comp= 9 NCL= 18 Silhouette= 0.860880024751
+Comp= 10 NCL= 18 Silhouette= 0.840105112274
+--------------------
+VOCL= 6
+NCOEFS= 3
+Comp= 2 NCL= 6 Silhouette= 0.454941464838
+Comp= 3 NCL= 9 Silhouette= 0.262610278124
+Comp= 4 NCL= 9 Silhouette= 0.306300844085
+Comp= 5 NCL= 10 Silhouette= 0.223631852322
+Comp= 6 NCL= 16 Silhouette= 0.210070340998
+Comp= 7 NCL= 19 Silhouette= 0.220833855014
+Comp= 8 NCL= 19 Silhouette= 0.226928499243
+Comp= 9 NCL= 18 Silhouette= 0.231503369722
+Comp= 10 NCL= 20 Silhouette= 0.206933045858
+--------------------
+VOCL= 6
+NCOEFS= 4
+Comp= 2 NCL= 5 Silhouette= 0.400734381685
+Comp= 3 NCL= 10 Silhouette= 0.39176290441
+Comp= 4 NCL= 11 Silhouette= 0.268556379755
+Comp= 5 NCL= 18 Silhouette= 0.269741625291
+Comp= 6 NCL= 19 Silhouette= 0.196461704411
+Comp= 7 NCL= 19 Silhouette= 0.168935891659
+Comp= 8 NCL= 19 Silhouette= 0.204272308982
+Comp= 9 NCL= 20 Silhouette= 0.132414791841
+Comp= 10 NCL= 19 Silhouette= 0.124162660487
+--------------------
+VOCL= 6
+NCOEFS= 5
+Comp= 2 NCL= 6 Silhouette= 0.509099767606
+Comp= 3 NCL= 5 Silhouette= 0.559853715902
+Comp= 4 NCL= 10 Silhouette= 0.40894578077
+Comp= 5 NCL= 12 Silhouette= 0.417006768551
+Comp= 6 NCL= 12 Silhouette= 0.416506868476
+Comp= 7 NCL= 15 Silhouette= 0.344978077029
+Comp= 8 NCL= 14 Silhouette= 0.262650391222
+Comp= 9 NCL= 17 Silhouette= 0.248086560783
+Comp= 10 NCL= 20 Silhouette= 0.323017387571
+--------------------
+VOCL= 6
+NCOEFS= 6
+Comp= 2 NCL= 4 Silhouette= 0.726121382549
+Comp= 3 NCL= 5 Silhouette= 0.711542246158
+Comp= 4 NCL= 11 Silhouette= 0.640081479463
+Comp= 5 NCL= 10 Silhouette= 0.604636593664
+Comp= 6 NCL= 13 Silhouette= 0.78076988225
+Comp= 7 NCL= 14 Silhouette= 0.689149143628
+Comp= 8 NCL= 12 Silhouette= 0.728868260244
+Comp= 9 NCL= 13 Silhouette= 0.675277386432
+Comp= 10 NCL= 15 Silhouette= 0.719191365391
+--------------------
+VOCL= 6
+NCOEFS= 7
+Comp= 2 NCL= 6 Silhouette= 0.879251630852
+Comp= 3 NCL= 7 Silhouette= 0.83036990738
+Comp= 4 NCL= 11 Silhouette= 0.793185689143
+Comp= 5 NCL= 10 Silhouette= 0.778381606023
+Comp= 6 NCL= 11 Silhouette= 0.806998547407
+Comp= 7 NCL= 12 Silhouette= 0.826577609891
+Comp= 8 NCL= 14 Silhouette= 0.838721444709
+Comp= 9 NCL= 18 Silhouette= 0.80153961306
+Comp= 10 NCL= 17 Silhouette= 0.773766089619
+--------------------
+VOCL= 6
+NCOEFS= 8
+Comp= 2 NCL= 4 Silhouette= 0.916969325948
+Comp= 3 NCL= 9 Silhouette= 0.942283841671
+Comp= 4 NCL= 9 Silhouette= 0.939081846798
+Comp= 5 NCL= 14 Silhouette= 0.931244110014
+Comp= 6 NCL= 18 Silhouette= 0.941846564039
+Comp= 7 NCL= 18 Silhouette= 0.915329550003
+Comp= 8 NCL= 19 Silhouette= 0.917277176943
+Comp= 9 NCL= 20 Silhouette= 0.926170469997
+Comp= 10 NCL= 20 Silhouette= 0.925844681334
+********************
+WLEN= 32
+--------------------
+VOCL= 3
+NCOEFS= 3
+Comp= 2 NCL= 6 Silhouette= 0.286167760252
+Comp= 3 NCL= 7 Silhouette= 0.153030122995
+Comp= 4 NCL= 8 Silhouette= 0.169457604124
+Comp= 5 NCL= 13 Silhouette= 0.106715327694
+Comp= 6 NCL= 19 Silhouette= 0.174294798534
+Comp= 7 NCL= 18 Silhouette= 0.121240082159
+Comp= 8 NCL= 20 Silhouette= 0.133622923682
+Comp= 9 NCL= 20 Silhouette= 0.0960124329867
+Comp= 10 NCL= 19 Silhouette= 0.129887439132
+--------------------
+VOCL= 3
+NCOEFS= 4
+Comp= 2 NCL= 8 Silhouette= 0.289537208328
+Comp= 3 NCL= 8 Silhouette= 0.306321735471
+Comp= 4 NCL= 11 Silhouette= 0.236499360588
+Comp= 5 NCL= 15 Silhouette= 0.0915299029551
+Comp= 6 NCL= 15 Silhouette= 0.175789901764
+Comp= 7 NCL= 19 Silhouette= 0.159951041348
+Comp= 8 NCL= 18 Silhouette= 0.0733508584091
+Comp= 9 NCL= 19 Silhouette= 0.119699669746
+Comp= 10 NCL= 19 Silhouette= 0.166932626901
+--------------------
+VOCL= 3
+NCOEFS= 5
+Comp= 2 NCL= 6 Silhouette= 0.412301425523
+Comp= 3 NCL= 7 Silhouette= 0.360345851577
+Comp= 4 NCL= 11 Silhouette= 0.337368280301
+Comp= 5 NCL= 14 Silhouette= 0.221807646166
+Comp= 6 NCL= 15 Silhouette= 0.237392022133
+Comp= 7 NCL= 17 Silhouette= 0.186151808206
+Comp= 8 NCL= 19 Silhouette= 0.208931290758
+Comp= 9 NCL= 20 Silhouette= 0.071656043097
+Comp= 10 NCL= 18 Silhouette= 0.126166793248
+--------------------
+VOCL= 3
+NCOEFS= 6
+Comp= 2 NCL= 7 Silhouette= 0.487357413573
+Comp= 3 NCL= 9 Silhouette= 0.392228408088
+Comp= 4 NCL= 9 Silhouette= 0.33111210621
+Comp= 5 NCL= 13 Silhouette= 0.189361093498
+Comp= 6 NCL= 18 Silhouette= 0.137004763581
+Comp= 7 NCL= 18 Silhouette= 0.147872388308
+Comp= 8 NCL= 18 Silhouette= 0.178979854525
+Comp= 9 NCL= 19 Silhouette= 0.187433858992
+Comp= 10 NCL= 19 Silhouette= 0.150080826296
+--------------------
+VOCL= 3
+NCOEFS= 7
+Comp= 2 NCL= 6 Silhouette= 0.547034724956
+Comp= 3 NCL= 9 Silhouette= 0.402958862272
+Comp= 4 NCL= 11 Silhouette= 0.32503739356
+Comp= 5 NCL= 12 Silhouette= 0.291815409152
+Comp= 6 NCL= 19 Silhouette= 0.129623006438
+Comp= 7 NCL= 19 Silhouette= 0.178724066151
+Comp= 8 NCL= 18 Silhouette= 0.248972247209
+Comp= 9 NCL= 20 Silhouette= 0.158727858664
+Comp= 10 NCL= 20 Silhouette= 0.173971650948
+--------------------
+VOCL= 3
+NCOEFS= 8
+Comp= 2 NCL= 6 Silhouette= 0.628133569415
+Comp= 3 NCL= 8 Silhouette= 0.610213785229
+Comp= 4 NCL= 11 Silhouette= 0.51882085657
+Comp= 5 NCL= 13 Silhouette= 0.503262493359
+Comp= 6 NCL= 16 Silhouette= 0.459341076838
+Comp= 7 NCL= 17 Silhouette= 0.44456969835
+Comp= 8 NCL= 17 Silhouette= 0.351550078666
+Comp= 9 NCL= 19 Silhouette= 0.298156052161
+Comp= 10 NCL= 18 Silhouette= 0.339193258041
+--------------------
+VOCL= 4
+NCOEFS= 3
+Comp= 2 NCL= 5 Silhouette= 0.359179117701
+Comp= 3 NCL= 11 Silhouette= 0.203015809881
+Comp= 4 NCL= 8 Silhouette= 0.132657450381
+Comp= 5 NCL= 13 Silhouette= 0.122689562387
+Comp= 6 NCL= 14 Silhouette= 0.132617766105
+Comp= 7 NCL= 18 Silhouette= 0.191687309712
+Comp= 8 NCL= 20 Silhouette= 0.139204219932
+Comp= 9 NCL= 20 Silhouette= 0.141102676637
+Comp= 10 NCL= 20 Silhouette= 0.175346021695
+--------------------
+VOCL= 4
+NCOEFS= 4
+Comp= 2 NCL= 5 Silhouette= 0.194626021539
+Comp= 3 NCL= 7 Silhouette= 0.322648657698
+Comp= 4 NCL= 13 Silhouette= 0.26203687944
+Comp= 5 NCL= 14 Silhouette= 0.227081449742
+Comp= 6 NCL= 15 Silhouette= 0.225762984462
+Comp= 7 NCL= 18 Silhouette= 0.21442352423
+Comp= 8 NCL= 16 Silhouette= 0.197513299736
+Comp= 9 NCL= 20 Silhouette= 0.210179954153
+Comp= 10 NCL= 20 Silhouette= 0.235406454225
+--------------------
+VOCL= 4
+NCOEFS= 5
+Comp= 2 NCL= 7 Silhouette= 0.432218232022
+Comp= 3 NCL= 9 Silhouette= 0.256834809647
+Comp= 4 NCL= 11 Silhouette= 0.230368643338
+Comp= 5 NCL= 11 Silhouette= 0.157792087124
+Comp= 6 NCL= 14 Silhouette= 0.202012291733
+Comp= 7 NCL= 17 Silhouette= 0.194044724678
+Comp= 8 NCL= 18 Silhouette= 0.200621845667
+Comp= 9 NCL= 18 Silhouette= 0.216715321283
+Comp= 10 NCL= 20 Silhouette= 0.181380556425
+--------------------
+VOCL= 4
+NCOEFS= 6
+Comp= 2 NCL= 7 Silhouette= 0.345300652413
+Comp= 3 NCL= 9 Silhouette= 0.333783617004
+Comp= 4 NCL= 10 Silhouette= 0.273904594337
+Comp= 5 NCL= 11 Silhouette= 0.192757558715
+Comp= 6 NCL= 14 Silhouette= 0.188850523067
+Comp= 7 NCL= 17 Silhouette= 0.13615965706
+Comp= 8 NCL= 20 Silhouette= 0.184203734526
+Comp= 9 NCL= 20 Silhouette= 0.134795992776
+Comp= 10 NCL= 20 Silhouette= 0.130854896616
+--------------------
+VOCL= 4
+NCOEFS= 7
+Comp= 2 NCL= 7 Silhouette= 0.747087922779
+Comp= 3 NCL= 9 Silhouette= 0.72170919517
+Comp= 4 NCL= 11 Silhouette= 0.754458451369
+Comp= 5 NCL= 12 Silhouette= 0.738592919983
+Comp= 6 NCL= 14 Silhouette= 0.542351312081
+Comp= 7 NCL= 12 Silhouette= 0.666884809002
+Comp= 8 NCL= 13 Silhouette= 0.454785295028
+Comp= 9 NCL= 14 Silhouette= 0.345474407917
+Comp= 10 NCL= 16 Silhouette= 0.488652301401
+--------------------
+VOCL= 4
+NCOEFS= 8
+Comp= 2 NCL= 8 Silhouette= 0.781954593163
+Comp= 3 NCL= 13 Silhouette= 0.806019419774
+Comp= 4 NCL= 15 Silhouette= 0.79508154387
+Comp= 5 NCL= 18 Silhouette= 0.80439792906
+Comp= 6 NCL= 15 Silhouette= 0.749460793014
+Comp= 7 NCL= 18 Silhouette= 0.815429959747
+Comp= 8 NCL= 18 Silhouette= 0.766890697508
+Comp= 9 NCL= 19 Silhouette= 0.720576918719
+Comp= 10 NCL= 19 Silhouette= 0.780100588513
+--------------------
+VOCL= 5
+NCOEFS= 3
+Comp= 2 NCL= 4 Silhouette= 0.385970105509
+Comp= 3 NCL= 7 Silhouette= 0.186872195018
+Comp= 4 NCL= 10 Silhouette= 0.214333492216
+Comp= 5 NCL= 17 Silhouette= 0.158066206118
+Comp= 6 NCL= 15 Silhouette= 0.138595195044
+Comp= 7 NCL= 19 Silhouette= 0.100786318435
+Comp= 8 NCL= 19 Silhouette= 0.196848912514
+Comp= 9 NCL= 20 Silhouette= 0.170444446181
+Comp= 10 NCL= 20 Silhouette= 0.199700724924
+--------------------
+VOCL= 5
+NCOEFS= 4
+Comp= 2 NCL= 6 Silhouette= 0.366912933108
+Comp= 3 NCL= 7 Silhouette= 0.347976173177
+Comp= 4 NCL= 11 Silhouette= 0.287021600183
+Comp= 5 NCL= 15 Silhouette= 0.211810246028
+Comp= 6 NCL= 14 Silhouette= 0.167063951077
+Comp= 7 NCL= 15 Silhouette= 0.154027693376
+Comp= 8 NCL= 17 Silhouette= 0.222203528968
+Comp= 9 NCL= 18 Silhouette= 0.197880795446
+Comp= 10 NCL= 19 Silhouette= 0.182691727069
+--------------------
+VOCL= 5
+NCOEFS= 5
+Comp= 2 NCL= 7 Silhouette= 0.390813965325
+Comp= 3 NCL= 6 Silhouette= 0.322615058189
+Comp= 4 NCL= 11 Silhouette= 0.406842860769
+Comp= 5 NCL= 13 Silhouette= 0.286671185516
+Comp= 6 NCL= 17 Silhouette= 0.294889663646
+Comp= 7 NCL= 16 Silhouette= 0.220878725798
+Comp= 8 NCL= 20 Silhouette= 0.155262773704
+Comp= 9 NCL= 20 Silhouette= 0.123319747243
+Comp= 10 NCL= 20 Silhouette= 0.193312080741
+--------------------
+VOCL= 5
+NCOEFS= 6
+Comp= 2 NCL= 8 Silhouette= 0.761673887289
+Comp= 3 NCL= 9 Silhouette= 0.539196925475
+Comp= 4 NCL= 11 Silhouette= 0.782044724409
+Comp= 5 NCL= 11 Silhouette= 0.520253371179
+Comp= 6 NCL= 12 Silhouette= 0.729841195728
+Comp= 7 NCL= 15 Silhouette= 0.503210875343
+Comp= 8 NCL= 18 Silhouette= 0.555664992241
+Comp= 9 NCL= 14 Silhouette= 0.369484119786
+Comp= 10 NCL= 15 Silhouette= 0.341522712178
+--------------------
+VOCL= 5
+NCOEFS= 7
+Comp= 2 NCL= 8 Silhouette= 0.794116920215
+Comp= 3 NCL= 12 Silhouette= 0.891853519709
+Comp= 4 NCL= 13 Silhouette= 0.869525638354
+Comp= 5 NCL= 11 Silhouette= 0.815847110624
+Comp= 6 NCL= 14 Silhouette= 0.852141138705
+Comp= 7 NCL= 15 Silhouette= 0.849198507111
+Comp= 8 NCL= 16 Silhouette= 0.798299797672
+Comp= 9 NCL= 17 Silhouette= 0.758618184647
+Comp= 10 NCL= 18 Silhouette= 0.765642582525
+--------------------
+VOCL= 5
+NCOEFS= 8
+Comp= 2 NCL= 7 Silhouette= 0.935794314893
+Comp= 3 NCL= 8 Silhouette= 0.962542473916
+Comp= 4 NCL= 11 Silhouette= 0.962011665356
+Comp= 5 NCL= 10 Silhouette= 0.957632853512
+Comp= 6 NCL= 17 Silhouette= 0.932521978224
+Comp= 7 NCL= 17 Silhouette= 0.93439373997
+Comp= 8 NCL= 17 Silhouette= 0.914256330333
+Comp= 9 NCL= 20 Silhouette= 0.902820420838
+Comp= 10 NCL= 19 Silhouette= 0.922111452689
+--------------------
+VOCL= 6
+NCOEFS= 3
+Comp= 2 NCL= 5 Silhouette= 0.392634904396
+Comp= 3 NCL= 10 Silhouette= 0.273058460085
+Comp= 4 NCL= 13 Silhouette= 0.222581641687
+Comp= 5 NCL= 14 Silhouette= 0.193882486123
+Comp= 6 NCL= 13 Silhouette= 0.139147227881
+Comp= 7 NCL= 19 Silhouette= 0.178501454748
+Comp= 8 NCL= 18 Silhouette= 0.174221368993
+Comp= 9 NCL= 20 Silhouette= 0.204001089576
+Comp= 10 NCL= 19 Silhouette= 0.136927933656
+--------------------
+VOCL= 6
+NCOEFS= 4
+Comp= 2 NCL= 6 Silhouette= 0.494109740465
+Comp= 3 NCL= 7 Silhouette= 0.281531528687
+Comp= 4 NCL= 10 Silhouette= 0.258772727495
+Comp= 5 NCL= 12 Silhouette= 0.291774880261
+Comp= 6 NCL= 12 Silhouette= 0.208088374231
+Comp= 7 NCL= 15 Silhouette= 0.202007902926
+Comp= 8 NCL= 19 Silhouette= 0.148812330846
+Comp= 9 NCL= 20 Silhouette= 0.236250727404
+Comp= 10 NCL= 20 Silhouette= 0.172084132161
+--------------------
+VOCL= 6
+NCOEFS= 5
+Comp= 2 NCL= 5 Silhouette= 0.674353560241
+Comp= 3 NCL= 7 Silhouette= 0.663021163204
+Comp= 4 NCL= 7 Silhouette= 0.593911370923
+Comp= 5 NCL= 11 Silhouette= 0.551878450319
+Comp= 6 NCL= 11 Silhouette= 0.501601248619
+Comp= 7 NCL= 14 Silhouette= 0.475083783636
+Comp= 8 NCL= 16 Silhouette= 0.45052524194
+Comp= 9 NCL= 17 Silhouette= 0.459391642156
+Comp= 10 NCL= 19 Silhouette= 0.478188229369
+--------------------
+VOCL= 6
+NCOEFS= 6
+Comp= 2 NCL= 7 Silhouette= 0.734788786938
+Comp= 3 NCL= 11 Silhouette= 0.725297599227
+Comp= 4 NCL= 14 Silhouette= 0.787699467639
+Comp= 5 NCL= 15 Silhouette= 0.774263713011
+Comp= 6 NCL= 15 Silhouette= 0.741721428994
+Comp= 7 NCL= 17 Silhouette= 0.712282395009
+Comp= 8 NCL= 16 Silhouette= 0.691449012607
+Comp= 9 NCL= 17 Silhouette= 0.71125363963
+Comp= 10 NCL= 18 Silhouette= 0.707576948774
+--------------------
+VOCL= 6
+NCOEFS= 7
+Comp= 2 NCL= 5 Silhouette= 0.891927327845
+Comp= 3 NCL= 8 Silhouette= 0.893375645167
+Comp= 4 NCL= 10 Silhouette= 0.894406586579
+Comp= 5 NCL= 16 Silhouette= 0.906179602696
+Comp= 6 NCL= 10 Silhouette= 0.909060100847
+Comp= 7 NCL= 11 Silhouette= 0.924817683299
+Comp= 8 NCL= 18 Silhouette= 0.898995289038
+Comp= 9 NCL= 19 Silhouette= 0.901584493145
+Comp= 10 NCL= 19 Silhouette= 0.897792418466
+--------------------
+VOCL= 6
+NCOEFS= 8
+Comp= 2 NCL= 3 Silhouette= 0.948530309783
+Comp= 3 NCL= 4 Silhouette= 0.951707402129
+Comp= 4 NCL= 9 Silhouette= 0.953241376838
+Comp= 5 NCL= 13 Silhouette= 0.964142019951
+Comp= 6 NCL= 14 Silhouette= 0.960650513611
+Comp= 7 NCL= 20 Silhouette= 0.963882618441
+Comp= 8 NCL= 19 Silhouette= 0.952289688139
+Comp= 9 NCL= 20 Silhouette= 0.96388261851
+Comp= 10 NCL= 18 Silhouette= 0.772465171441
+********************
+WLEN= 64
+--------------------
+VOCL= 3
+NCOEFS= 3
+Comp= 2 NCL= 6 Silhouette= 0.338071439183
+Comp= 3 NCL= 8 Silhouette= 0.173861843278
+Comp= 4 NCL= 13 Silhouette= 0.152826633962
+Comp= 5 NCL= 14 Silhouette= 0.0151868817683
+Comp= 6 NCL= 20 Silhouette= -0.00264406684106
+Comp= 7 NCL= 18 Silhouette= 0.0395147265106
+Comp= 8 NCL= 20 Silhouette= 0.00434292968686
+Comp= 9 NCL= 20 Silhouette= 0.0676361208986
+Comp= 10 NCL= 20 Silhouette= 0.044524549539
+--------------------
+VOCL= 3
+NCOEFS= 4
+Comp= 2 NCL= 7 Silhouette= 0.284962069805
+Comp= 3 NCL= 6 Silhouette= 0.331862857666
+Comp= 4 NCL= 12 Silhouette= 0.27952302931
+Comp= 5 NCL= 14 Silhouette= 0.172856691679
+Comp= 6 NCL= 13 Silhouette= 0.105802467734
+Comp= 7 NCL= 20 Silhouette= 0.149055815725
+Comp= 8 NCL= 20 Silhouette= 0.081949400679
+Comp= 9 NCL= 20 Silhouette= 0.117909015071
+Comp= 10 NCL= 20 Silhouette= 0.0749866471327
+--------------------
+VOCL= 3
+NCOEFS= 5
+Comp= 2 NCL= 5 Silhouette= 0.364878613751
+Comp= 3 NCL= 9 Silhouette= 0.372416619366
+Comp= 4 NCL= 11 Silhouette= 0.359832558211
+Comp= 5 NCL= 13 Silhouette= 0.268519507062
+Comp= 6 NCL= 15 Silhouette= 0.23534568231
+Comp= 7 NCL= 18 Silhouette= 0.138327056689
+Comp= 8 NCL= 18 Silhouette= 0.149599545909
+Comp= 9 NCL= 20 Silhouette= 0.145365241508
+Comp= 10 NCL= 19 Silhouette= 0.14256090027
+--------------------
+VOCL= 3
+NCOEFS= 6
+Comp= 2 NCL= 6 Silhouette= 0.46375743796
+Comp= 3 NCL= 8 Silhouette= 0.368623546022
+Comp= 4 NCL= 9 Silhouette= 0.32423432031
+Comp= 5 NCL= 10 Silhouette= 0.134926397151
+Comp= 6 NCL= 17 Silhouette= 0.172829209138
+Comp= 7 NCL= 19 Silhouette= 0.145934065732
+Comp= 8 NCL= 19 Silhouette= 0.1359164386
+Comp= 9 NCL= 20 Silhouette= 0.103235261733
+Comp= 10 NCL= 20 Silhouette= 0.129925057936
+--------------------
+VOCL= 3
+NCOEFS= 7
+Comp= 2 NCL= 5 Silhouette= 0.487126716775
+Comp= 3 NCL= 9 Silhouette= 0.404019463459
+Comp= 4 NCL= 9 Silhouette= 0.429516437858
+Comp= 5 NCL= 13 Silhouette= 0.28578959845
+Comp= 6 NCL= 15 Silhouette= 0.237255171223
+Comp= 7 NCL= 17 Silhouette= 0.202530913143
+Comp= 8 NCL= 18 Silhouette= 0.185208119815
+Comp= 9 NCL= 20 Silhouette= 0.186434584305
+Comp= 10 NCL= 20 Silhouette= 0.209727659039
+--------------------
+VOCL= 3
+NCOEFS= 8
+Comp= 2 NCL= 5 Silhouette= 0.780873042012
+Comp= 3 NCL= 6 Silhouette= 0.685476575552
+Comp= 4 NCL= 6 Silhouette= 0.639543694641
+Comp= 5 NCL= 9 Silhouette= 0.657532793348
+Comp= 6 NCL= 9 Silhouette= 0.662433890665
+Comp= 7 NCL= 10 Silhouette= 0.706383783677
+Comp= 8 NCL= 12 Silhouette= 0.583789478359
+Comp= 9 NCL= 11 Silhouette= 0.669182049767
+Comp= 10 NCL= 11 Silhouette= 0.485074993051
+--------------------
+VOCL= 4
+NCOEFS= 3
+Comp= 2 NCL= 6 Silhouette= 0.345635130423
+Comp= 3 NCL= 8 Silhouette= 0.272908756742
+Comp= 4 NCL= 9 Silhouette= 0.0713288697031
+Comp= 5 NCL= 13 Silhouette= 0.0970085738859
+Comp= 6 NCL= 17 Silhouette= 0.0697802891647
+Comp= 7 NCL= 20 Silhouette= 0.108892488478
+Comp= 8 NCL= 19 Silhouette= 0.0451266821797
+Comp= 9 NCL= 20 Silhouette= 0.0689040815798
+Comp= 10 NCL= 20 Silhouette= 0.0904003858909
+--------------------
+VOCL= 4
+NCOEFS= 4
+Comp= 2 NCL= 5 Silhouette= 0.364665629082
+Comp= 3 NCL= 12 Silhouette= 0.348288794322
+Comp= 4 NCL= 12 Silhouette= 0.282296953498
+Comp= 5 NCL= 16 Silhouette= 0.224573172142
+Comp= 6 NCL= 18 Silhouette= 0.145260380901
+Comp= 7 NCL= 18 Silhouette= 0.146567792774
+Comp= 8 NCL= 19 Silhouette= 0.123432455929
+Comp= 9 NCL= 20 Silhouette= 0.108950671367
+Comp= 10 NCL= 20 Silhouette= 0.153444774847
+--------------------
+VOCL= 4
+NCOEFS= 5
+Comp= 2 NCL= 6 Silhouette= 0.47064706097
+Comp= 3 NCL= 8 Silhouette= 0.336995352631
+Comp= 4 NCL= 11 Silhouette= 0.328275369645
+Comp= 5 NCL= 15 Silhouette= 0.286401559794
+Comp= 6 NCL= 17 Silhouette= 0.172445340088
+Comp= 7 NCL= 18 Silhouette= 0.175530720409
+Comp= 8 NCL= 20 Silhouette= 0.127275813058
+Comp= 9 NCL= 20 Silhouette= 0.218641923504
+Comp= 10 NCL= 20 Silhouette= 0.183187644488
+--------------------
+VOCL= 4
+NCOEFS= 6
+Comp= 2 NCL= 8 Silhouette= 0.503339766403
+Comp= 3 NCL= 11 Silhouette= 0.421955567899
+Comp= 4 NCL= 11 Silhouette= 0.434878612581
+Comp= 5 NCL= 12 Silhouette= 0.344190520138
+Comp= 6 NCL= 16 Silhouette= 0.210216888431
+Comp= 7 NCL= 16 Silhouette= 0.183532903588
+Comp= 8 NCL= 19 Silhouette= 0.236062929776
+Comp= 9 NCL= 19 Silhouette= 0.213136267727
+Comp= 10 NCL= 19 Silhouette= 0.189770674741
+--------------------
+VOCL= 4
+NCOEFS= 7
+Comp= 2 NCL= 10 Silhouette= 0.72343984561
+Comp= 3 NCL= 12 Silhouette= 0.733707549556
+Comp= 4 NCL= 14 Silhouette= 0.61664870489
+Comp= 5 NCL= 12 Silhouette= 0.445052878582
+Comp= 6 NCL= 12 Silhouette= 0.454177040598
+Comp= 7 NCL= 13 Silhouette= 0.452338861919
+Comp= 8 NCL= 14 Silhouette= 0.472383895746
+Comp= 9 NCL= 17 Silhouette= 0.456540658973
+Comp= 10 NCL= 15 Silhouette= 0.443517401582
+--------------------
+VOCL= 4
+NCOEFS= 8
+Comp= 2 NCL= 8 Silhouette= 0.813694074971
+Comp= 3 NCL= 15 Silhouette= 0.848209029289
+Comp= 4 NCL= 19 Silhouette= 0.843497820246
+Comp= 5 NCL= 18 Silhouette= 0.845832748351
+Comp= 6 NCL= 16 Silhouette= 0.823343733587
+Comp= 7 NCL= 15 Silhouette= 0.812621358491
+Comp= 8 NCL= 19 Silhouette= 0.799624063884
+Comp= 9 NCL= 18 Silhouette= 0.785391523857
+Comp= 10 NCL= 20 Silhouette= 0.828605063555
+--------------------
+VOCL= 5
+NCOEFS= 3
+Comp= 2 NCL= 5 Silhouette= 0.418271295888
+Comp= 3 NCL= 7 Silhouette= 0.34474534995
+Comp= 4 NCL= 14 Silhouette= 0.320092290749
+Comp= 5 NCL= 14 Silhouette= 0.210028518521
+Comp= 6 NCL= 17 Silhouette= 0.21370560067
+Comp= 7 NCL= 20 Silhouette= 0.122677596012
+Comp= 8 NCL= 19 Silhouette= 0.177599057292
+Comp= 9 NCL= 19 Silhouette= 0.0835641991873
+Comp= 10 NCL= 20 Silhouette= 0.131949444614
+--------------------
+VOCL= 5
+NCOEFS= 4
+Comp= 2 NCL= 7 Silhouette= 0.434678844067
+Comp= 3 NCL= 6 Silhouette= 0.337524225111
+Comp= 4 NCL= 12 Silhouette= 0.303540929035
+Comp= 5 NCL= 15 Silhouette= 0.291132329553
+Comp= 6 NCL= 15 Silhouette= 0.251432268306
+Comp= 7 NCL= 19 Silhouette= 0.222007022918
+Comp= 8 NCL= 19 Silhouette= 0.244152754875
+Comp= 9 NCL= 19 Silhouette= 0.187593418229
+Comp= 10 NCL= 20 Silhouette= 0.155445500119
+--------------------
+VOCL= 5
+NCOEFS= 5
+Comp= 2 NCL= 7 Silhouette= 0.455942031897
+Comp= 3 NCL= 10 Silhouette= 0.438568750573
+Comp= 4 NCL= 14 Silhouette= 0.302791858366
+Comp= 5 NCL= 15 Silhouette= 0.29134864185
+Comp= 6 NCL= 16 Silhouette= 0.280096624478
+Comp= 7 NCL= 17 Silhouette= 0.237363266579
+Comp= 8 NCL= 17 Silhouette= 0.210684974906
+Comp= 9 NCL= 18 Silhouette= 0.215467500167
+Comp= 10 NCL= 18 Silhouette= 0.220168357272
+--------------------
+VOCL= 5
+NCOEFS= 6
+Comp= 2 NCL= 7 Silhouette= 0.594384857571
+Comp= 3 NCL= 7 Silhouette= 0.841158212518
+Comp= 4 NCL= 8 Silhouette= 0.82635058913
+Comp= 5 NCL= 10 Silhouette= 0.531874553262
+Comp= 6 NCL= 11 Silhouette= 0.685832575369
+Comp= 7 NCL= 14 Silhouette= 0.559394685797
+Comp= 8 NCL= 13 Silhouette= 0.668560885519
+Comp= 9 NCL= 15 Silhouette= 0.435795873898
+Comp= 10 NCL= 15 Silhouette= 0.480050652845
+--------------------
+VOCL= 5
+NCOEFS= 7
+Comp= 2 NCL= 6 Silhouette= 0.79098992144
+Comp= 3 NCL= 13 Silhouette= 0.804782658759
+Comp= 4 NCL= 17 Silhouette= 0.848356801039
+Comp= 5 NCL= 16 Silhouette= 0.847430116364
+Comp= 6 NCL= 19 Silhouette= 0.836671967414
+Comp= 7 NCL= 19 Silhouette= 0.840880258018
+Comp= 8 NCL= 19 Silhouette= 0.808703171528
+Comp= 9 NCL= 18 Silhouette= 0.8171653224
+Comp= 10 NCL= 17 Silhouette= 0.841613635424
+--------------------
+VOCL= 5
+NCOEFS= 8
+Comp= 2 NCL= 8 Silhouette= 0.965934439134
+Comp= 3 NCL= 9 Silhouette= 0.967054089734
+Comp= 4 NCL= 11 Silhouette= 0.985623871042
+Comp= 5 NCL= 11 Silhouette= 0.981753513467
+Comp= 6 NCL= 10 Silhouette= 0.976104959596
+Comp= 7 NCL= 12 Silhouette= 0.977640599588
+Comp= 8 NCL= 11 Silhouette= 0.987074242042
+Comp= 9 NCL= 19 Silhouette= 0.979574794343
+Comp= 10 NCL= 19 Silhouette= 0.979581435781
+--------------------
+VOCL= 6
+NCOEFS= 3
+Comp= 2 NCL= 6 Silhouette= 0.448883363457
+Comp= 3 NCL= 10 Silhouette= 0.346087696008
+Comp= 4 NCL= 11 Silhouette= 0.294605715713
+Comp= 5 NCL= 14 Silhouette= 0.288588405166
+Comp= 6 NCL= 19 Silhouette= 0.226591255324
+Comp= 7 NCL= 20 Silhouette= 0.246395265735
+Comp= 8 NCL= 20 Silhouette= 0.191418765072
+Comp= 9 NCL= 20 Silhouette= 0.196818474146
+Comp= 10 NCL= 20 Silhouette= 0.204439764028
+--------------------
+VOCL= 6
+NCOEFS= 4
+Comp= 2 NCL= 7 Silhouette= 0.442209104743
+Comp= 3 NCL= 6 Silhouette= 0.400498622561
+Comp= 4 NCL= 12 Silhouette= 0.401279875028
+Comp= 5 NCL= 13 Silhouette= 0.305380305037
+Comp= 6 NCL= 16 Silhouette= 0.27077867554
+Comp= 7 NCL= 20 Silhouette= 0.235938835875
+Comp= 8 NCL= 20 Silhouette= 0.235384138226
+Comp= 9 NCL= 20 Silhouette= 0.235957629297
+Comp= 10 NCL= 20 Silhouette= 0.132400142129
+--------------------
+VOCL= 6
+NCOEFS= 5
+Comp= 2 NCL= 6 Silhouette= 0.77111324108
+Comp= 3 NCL= 6 Silhouette= 0.702801112944
+Comp= 4 NCL= 9 Silhouette= 0.654051568097
+Comp= 5 NCL= 8 Silhouette= 0.60008751861
+Comp= 6 NCL= 17 Silhouette= 0.435665533324
+Comp= 7 NCL= 13 Silhouette= 0.362056496761
+Comp= 8 NCL= 16 Silhouette= 0.420373462018
+Comp= 9 NCL= 17 Silhouette= 0.326493112949
+Comp= 10 NCL= 17 Silhouette= 0.426468839833
+--------------------
+VOCL= 6
+NCOEFS= 6
+Comp= 2 NCL= 8 Silhouette= 0.808802483718
+Comp= 3 NCL= 8 Silhouette= 0.75194305594
+Comp= 4 NCL= 14 Silhouette= 0.794649892537
+Comp= 5 NCL= 13 Silhouette= 0.755391528869
+Comp= 6 NCL= 14 Silhouette= 0.744889033929
+Comp= 7 NCL= 15 Silhouette= 0.746015692624
+Comp= 8 NCL= 18 Silhouette= 0.753276185192
+Comp= 9 NCL= 16 Silhouette= 0.752528924662
+Comp= 10 NCL= 19 Silhouette= 0.728012957458
+--------------------
+VOCL= 6
+NCOEFS= 7
+Comp= 2 NCL= 7 Silhouette= 0.907048247386
+Comp= 3 NCL= 12 Silhouette= 0.942885126389
+Comp= 4 NCL= 14 Silhouette= 0.953048711277
+Comp= 5 NCL= 14 Silhouette= 0.943146946379
+Comp= 6 NCL= 16 Silhouette= 0.957085709738
+Comp= 7 NCL= 16 Silhouette= 0.951366515028
+Comp= 8 NCL= 16 Silhouette= 0.958296764732
+Comp= 9 NCL= 16 Silhouette= 0.95428744502
+Comp= 10 NCL= 18 Silhouette= 0.972420211839
+--------------------
+VOCL= 6
+NCOEFS= 8
+Comp= 2 NCL= 5 Silhouette= 0.976470190681
+Comp= 3 NCL= 7 Silhouette= 0.99999999994
+Comp= 4 NCL= 7 Silhouette= 0.999999999826
+Comp= 5 NCL= 7 Silhouette= 0.999999999884
+Comp= 6 NCL= 7 Silhouette= 0.853007552211
+Comp= 7 NCL= 8 Silhouette= 0.791931557643
+Comp= 8 NCL= 7 Silhouette= 0.650146854821
+Comp= 9 NCL= 10 Silhouette= 0.435868016004
+Comp= 10 NCL= 18 Silhouette= 0.640572631359
+********************
+WLEN= 128
+--------------------
+VOCL= 3
+NCOEFS= 3
+Comp= 2 NCL= 7 Silhouette= 0.768610505956
+Comp= 3 NCL= 8 Silhouette= 0.724879294621
+Comp= 4 NCL= 19 Silhouette= 0.764515110432
+Comp= 5 NCL= 20 Silhouette= 0.775072391331
+Comp= 6 NCL= 20 Silhouette= 0.767690916284
+Comp= 7 NCL= 20 Silhouette= 0.766246653812
+Comp= 8 NCL= 20 Silhouette= 0.756064607312
+Comp= 9 NCL= 20 Silhouette= 0.74911339804
+Comp= 10 NCL= 20 Silhouette= 0.743413617688
+--------------------
+VOCL= 3
+NCOEFS= 4
+Comp= 2 NCL= 8 Silhouette= 0.708070967623
+Comp= 3 NCL= 13 Silhouette= 0.756372648553
+Comp= 4 NCL= 18 Silhouette= 0.744845193194
+Comp= 5 NCL= 19 Silhouette= 0.757895111551
+Comp= 6 NCL= 20 Silhouette= 0.765759526337
+Comp= 7 NCL= 20 Silhouette= 0.76755159238
+Comp= 8 NCL= 20 Silhouette= 0.762655009974
+Comp= 9 NCL= 20 Silhouette= 0.751058075844
+Comp= 10 NCL= 20 Silhouette= 0.742285699085
+--------------------
+VOCL= 3
+NCOEFS= 5
+Comp= 2 NCL= 6 Silhouette= 0.771898618387
+Comp= 3 NCL= 11 Silhouette= 0.751542476062
+Comp= 4 NCL= 11 Silhouette= 0.724258729769
+Comp= 5 NCL= 19 Silhouette= 0.734503461914
+Comp= 6 NCL= 20 Silhouette= 0.762590577435
+Comp= 7 NCL= 20 Silhouette= 0.746415175183
+Comp= 8 NCL= 20 Silhouette= 0.741923928815
+Comp= 9 NCL= 20 Silhouette= 0.734342244221
+Comp= 10 NCL= 20 Silhouette= 0.735446663157
+--------------------
+VOCL= 3
+NCOEFS= 6
+Comp= 2 NCL= 7 Silhouette= 0.758327192766
+Comp= 3 NCL= 9 Silhouette= 0.742568674728
+Comp= 4 NCL= 16 Silhouette= 0.749725031382
+Comp= 5 NCL= 19 Silhouette= 0.748210741233
+Comp= 6 NCL= 20 Silhouette= 0.754093798404
+Comp= 7 NCL= 19 Silhouette= 0.730137249086
+Comp= 8 NCL= 20 Silhouette= 0.745212926085
+Comp= 9 NCL= 19 Silhouette= 0.71888208983
+Comp= 10 NCL= 20 Silhouette= 0.734881438371
+--------------------
+VOCL= 3
+NCOEFS= 7
+Comp= 2 NCL= 6 Silhouette= 0.846026582778
+Comp= 3 NCL= 8 Silhouette= 0.826896671138
+Comp= 4 NCL= 10 Silhouette= 0.819575085081
+Comp= 5 NCL= 12 Silhouette= 0.787781429428
+Comp= 6 NCL= 15 Silhouette= 0.778923624524
+Comp= 7 NCL= 18 Silhouette= 0.796306133142
+Comp= 8 NCL= 19 Silhouette= 0.790774582444
+Comp= 9 NCL= 19 Silhouette= 0.807355407876
+Comp= 10 NCL= 20 Silhouette= 0.794645493309
+--------------------
+VOCL= 3
+NCOEFS= 8
+Comp= 2 NCL= 7 Silhouette= 0.939282580881
+Comp= 3 NCL= 6 Silhouette= 0.898585228767
+Comp= 4 NCL= 9 Silhouette= 0.929086208172
+Comp= 5 NCL= 10 Silhouette= 0.883042014107
+Comp= 6 NCL= 11 Silhouette= 0.917513680486
+Comp= 7 NCL= 12 Silhouette= 0.904439093863
+Comp= 8 NCL= 15 Silhouette= 0.901644585349
+Comp= 9 NCL= 17 Silhouette= 0.90090011354
+Comp= 10 NCL= 17 Silhouette= 0.899289019158
+--------------------
+VOCL= 4
+NCOEFS= 3
+Comp= 2 NCL= 6 Silhouette= 0.777185694445
+Comp= 3 NCL= 9 Silhouette= 0.725302229605
+Comp= 4 NCL= 20 Silhouette= 0.770299278279
+Comp= 5 NCL= 19 Silhouette= 0.762542054293
+Comp= 6 NCL= 20 Silhouette= 0.761367736501
+Comp= 7 NCL= 20 Silhouette= 0.760270274767
+Comp= 8 NCL= 20 Silhouette= 0.756714442948
+Comp= 9 NCL= 20 Silhouette= 0.757689351382
+Comp= 10 NCL= 20 Silhouette= 0.736249253451
+--------------------
+VOCL= 4
+NCOEFS= 4
+Comp= 2 NCL= 7 Silhouette= 0.731489420077
+Comp= 3 NCL= 12 Silhouette= 0.766887020174
+Comp= 4 NCL= 17 Silhouette= 0.757637938416
+Comp= 5 NCL= 20 Silhouette= 0.757217267354
+Comp= 6 NCL= 19 Silhouette= 0.734002612318
+Comp= 7 NCL= 20 Silhouette= 0.729892668154
+Comp= 8 NCL= 20 Silhouette= 0.746562368933
+Comp= 9 NCL= 20 Silhouette= 0.731942445912
+Comp= 10 NCL= 20 Silhouette= 0.728872516129
+--------------------
+VOCL= 4
+NCOEFS= 5
+Comp= 2 NCL= 8 Silhouette= 0.744073032129
+Comp= 3 NCL= 10 Silhouette= 0.742186590774
+Comp= 4 NCL= 14 Silhouette= 0.72384564409
+Comp= 5 NCL= 16 Silhouette= 0.730936769386
+Comp= 6 NCL= 19 Silhouette= 0.720216290675
+Comp= 7 NCL= 20 Silhouette= 0.71817454544
+Comp= 8 NCL= 20 Silhouette= 0.726622389931
+Comp= 9 NCL= 20 Silhouette= 0.718257511163
+Comp= 10 NCL= 20 Silhouette= 0.706312599423
+--------------------
+VOCL= 4
+NCOEFS= 6
+Comp= 2 NCL= 7 Silhouette= 0.85795980081
+Comp= 3 NCL= 8 Silhouette= 0.852702339828
+Comp= 4 NCL= 8 Silhouette= 0.851334224117
+Comp= 5 NCL= 13 Silhouette= 0.836688548533
+Comp= 6 NCL= 11 Silhouette= 0.825308619352
+Comp= 7 NCL= 17 Silhouette= 0.867840974624
+Comp= 8 NCL= 14 Silhouette= 0.828523277769
+Comp= 9 NCL= 17 Silhouette= 0.851232351325
+Comp= 10 NCL= 20 Silhouette= 0.811965722401
+--------------------
+VOCL= 4
+NCOEFS= 7
+Comp= 2 NCL= 5 Silhouette= 0.960176438097
+Comp= 3 NCL= 5 Silhouette= 0.961120885869
+Comp= 4 NCL= 6 Silhouette= 0.957587904315
+Comp= 5 NCL= 8 Silhouette= 0.963068843726
+Comp= 6 NCL= 15 Silhouette= 0.953842749539
+Comp= 7 NCL= 18 Silhouette= 0.966047529793
+Comp= 8 NCL= 18 Silhouette= 0.960305081736
+Comp= 9 NCL= 19 Silhouette= 0.964837121845
+Comp= 10 NCL= 19 Silhouette= 0.964222204356
+--------------------
+VOCL= 4
+NCOEFS= 8
+Comp= 2 NCL= 3 Silhouette= 0.974678323848
+Comp= 3 NCL= 6 Silhouette= 0.990231842679
+Comp= 4 NCL= 6 Silhouette= 0.995623766543
+Comp= 5 NCL= 10 Silhouette= 0.85441384569
+Comp= 6 NCL= 8 Silhouette= 0.790836005776
+Comp= 7 NCL= 9 Silhouette= 0.674621015026
+Comp= 8 NCL= 10 Silhouette= 0.53045996386
+Comp= 9 NCL= 20 Silhouette= 0.416573543089
+Comp= 10 NCL= 18 Silhouette= 0.042142887685
+--------------------
+VOCL= 5
+NCOEFS= 3
+Comp= 2 NCL= 5 Silhouette= 0.730400007933
+Comp= 3 NCL= 6 Silhouette= 0.706864105438
+Comp= 4 NCL= 15 Silhouette= 0.751434850887
+Comp= 5 NCL= 20 Silhouette= 0.772440679551
+Comp= 6 NCL= 19 Silhouette= 0.751677494875
+Comp= 7 NCL= 20 Silhouette= 0.766191305736
+Comp= 8 NCL= 20 Silhouette= 0.756413865998
+Comp= 9 NCL= 19 Silhouette= 0.752588210408
+Comp= 10 NCL= 20 Silhouette= 0.745226455105
+--------------------
+VOCL= 5
+NCOEFS= 4
+Comp= 2 NCL= 7 Silhouette= 0.723607737238
+Comp= 3 NCL= 10 Silhouette= 0.743387184113
+Comp= 4 NCL= 14 Silhouette= 0.737708807544
+Comp= 5 NCL= 18 Silhouette= 0.762577775832
+Comp= 6 NCL= 19 Silhouette= 0.749196992632
+Comp= 7 NCL= 20 Silhouette= 0.759843977539
+Comp= 8 NCL= 20 Silhouette= 0.738275706295
+Comp= 9 NCL= 20 Silhouette= 0.744031251631
+Comp= 10 NCL= 20 Silhouette= 0.742896648509
+--------------------
+VOCL= 5
+NCOEFS= 5
+Comp= 2 NCL= 6 Silhouette= 0.845793951601
+Comp= 3 NCL= 7 Silhouette= 0.885184583254
+Comp= 4 NCL= 10 Silhouette= 0.86683732434
+Comp= 5 NCL= 8 Silhouette= 0.86938445131
+Comp= 6 NCL= 12 Silhouette= 0.869628894173
+Comp= 7 NCL= 14 Silhouette= 0.863698218666
+Comp= 8 NCL= 16 Silhouette= 0.858205499337
+Comp= 9 NCL= 16 Silhouette= 0.829827032725
+Comp= 10 NCL= 15 Silhouette= 0.836669154897
+--------------------
+VOCL= 5
+NCOEFS= 6
+Comp= 2 NCL= 5 Silhouette= 0.948232190822
+Comp= 3 NCL= 8 Silhouette= 0.968564344598
+Comp= 4 NCL= 8 Silhouette= 0.970553497909
+Comp= 5 NCL= 8 Silhouette= 0.967396544526
+Comp= 6 NCL= 9 Silhouette= 0.97905679147
+Comp= 7 NCL= 12 Silhouette= 0.976832496059
+Comp= 8 NCL= 12 Silhouette= 0.977218491925
+Comp= 9 NCL= 16 Silhouette= 0.975171189848
+Comp= 10 NCL= 13 Silhouette= 0.526387546296
+--------------------
+VOCL= 5
+NCOEFS= 7
+Comp= 2 NCL= 5 Silhouette= 0.983498980049
+Comp= 3 NCL= 7 Silhouette= 0.99360219413
+Comp= 4 NCL= 7 Silhouette= 0.9937127652
+Comp= 5 NCL= 7 Silhouette= 0.994619735295
+Comp= 6 NCL= 9 Silhouette= 0.378931934933
+Comp= 7 NCL= 7 Silhouette= 0.288504266813
+Comp= 8 NCL= 9 Silhouette= 0.29420352242
+Comp= 9 NCL= 8 Silhouette= 0.456519040501
+Comp= 10 NCL= 10 Silhouette= 0.195794524703
+--------------------
+VOCL= 5
+NCOEFS= 8
+Comp= 2 NCL= 10 Silhouette= 0.261804778366
+Comp= 3 NCL= 11 Silhouette= 0.222049200511
+Comp= 4 NCL= 19 Silhouette= 0.227520556527
+Comp= 5 NCL= 20 Silhouette= 0.101498867953
+Comp= 6 NCL= 20 Silhouette= 0.0937463493196
+Comp= 7 NCL= 20 Silhouette= 0.0835107340071
+Comp= 8 NCL= 20 Silhouette= 0.0700435530934
+Comp= 9 NCL= 20 Silhouette= 0.101443150172
+--------------------
+VOCL= 6
+NCOEFS= 3
+Comp= 2 NCL= 7 Silhouette= 0.781577438312
+Comp= 3 NCL= 8 Silhouette= 0.772997743826
+Comp= 4 NCL= 16 Silhouette= 0.752397811336
+Comp= 5 NCL= 16 Silhouette= 0.723008099539
+Comp= 6 NCL= 19 Silhouette= 0.765258277945
+Comp= 7 NCL= 20 Silhouette= 0.762941302751
+Comp= 8 NCL= 20 Silhouette= 0.763631571908
+Comp= 9 NCL= 20 Silhouette= 0.757892180264
+Comp= 10 NCL= 20 Silhouette= 0.742440055772
+--------------------
+VOCL= 6
+NCOEFS= 4
+Comp= 2 NCL= 8 Silhouette= 0.798516489382
+Comp= 3 NCL= 9 Silhouette= 0.75601384719
+Comp= 4 NCL= 11 Silhouette= 0.744559168127
+Comp= 5 NCL= 14 Silhouette= 0.739159481439
+Comp= 6 NCL= 18 Silhouette= 0.756391582129
+Comp= 7 NCL= 20 Silhouette= 0.747949595417
+Comp= 8 NCL= 20 Silhouette= 0.753125240925
+Comp= 9 NCL= 20 Silhouette= 0.750643017826
+Comp= 10 NCL= 20 Silhouette= 0.742662864255
+--------------------
+VOCL= 6
+NCOEFS= 5
+Comp= 2 NCL= 5 Silhouette= 0.889440773398
+Comp= 3 NCL= 6 Silhouette= 0.922265223321
+Comp= 4 NCL= 9 Silhouette= 0.925471104492
+Comp= 5 NCL= 11 Silhouette= 0.901059517283
+Comp= 6 NCL= 14 Silhouette= 0.911616035832
+Comp= 7 NCL= 15 Silhouette= 0.900254482794
+Comp= 8 NCL= 16 Silhouette= 0.922888231786
+Comp= 9 NCL= 19 Silhouette= 0.900969550946
+Comp= 10 NCL= 20 Silhouette= 0.907015753205
+--------------------
+VOCL= 6
+NCOEFS= 6
+Comp= 2 NCL= 5 Silhouette= 0.978674967207
+Comp= 3 NCL= 6 Silhouette= 0.984034726902
+Comp= 4 NCL= 6 Silhouette= 0.985750196511
+Comp= 5 NCL= 9 Silhouette= 0.986050179994
+Comp= 6 NCL= 12 Silhouette= 0.827845802966
+Comp= 7 NCL= 10 Silhouette= 0.795542142589
+Comp= 8 NCL= 10 Silhouette= 0.691189184844
+Comp= 9 NCL= 18 Silhouette= 0.657174926092
+Comp= 10 NCL= 12 Silhouette= 0.480680595525
+--------------------
+VOCL= 6
+NCOEFS= 7
+Comp= 2 NCL= 8 Silhouette= 0.384232688968
+Comp= 3 NCL= 15 Silhouette= 0.148817512234
+Comp= 4 NCL= 18 Silhouette= 0.15120305808
+Comp= 5 NCL= 19 Silhouette= 0.0993330129371
+Comp= 6 NCL= 20 Silhouette= 0.121871642933
+Comp= 7 NCL= 20 Silhouette= 0.101587112578
+Comp= 8 NCL= 20 Silhouette= 0.00212147706269
+Comp= 9 NCL= 20 Silhouette= 0.0630025286329
+Comp= 10 NCL= 20 Silhouette= 0.0646783942046

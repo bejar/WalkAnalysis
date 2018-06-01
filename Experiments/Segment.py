@@ -31,10 +31,8 @@ from scipy.signal import argrelextrema
 from iWalker.Data import User, Exercise, Exercises, Pacientes, Trajectory
 from operator import itemgetter, attrgetter, methodcaller
 from iWalker.Util import extract_extrema
+
 __author__ = 'bejar'
-
-
-
 
 
 def segment_signal(signal, sbegin, send, smoothed=True):

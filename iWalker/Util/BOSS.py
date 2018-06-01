@@ -72,7 +72,7 @@ def euclidean_distance(histo1, histo2):
 
 def cosine_similarity(histo1, histo2):
     """
-    Euclidean distance between two histograms
+    Cosine similarity between two histograms
 
     :param histo1:
     :param histo2:
@@ -148,7 +148,7 @@ class Boss():
     def discretization_intervals(self, ncoef, wsize, vsize):
         """
         Computes the BOSS discretization for the signals, the word length is 2*ncoefs (real and imaginary part) except
-        is there are coefficients that are zero
+        if there are coefficients that are zero
 
         :param ncoef:
         :param wsize:

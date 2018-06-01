@@ -228,7 +228,7 @@ class Trajectory:
 
     def plot_trajectory(self, show=False):
         """
-        Plots the trajectory and differents characteristics
+        Plots the trajectory and different characteristics
 
         :return:
         """
