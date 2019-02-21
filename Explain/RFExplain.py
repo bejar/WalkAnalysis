@@ -82,6 +82,7 @@ def classifier(num=0, rfnest=1000, rfdep=10, SVMC=10):
     elif num == 4:
         return SVC(C=10000, gamma=0.01, kernel='rbf',degree=3)
 
+
 if __name__ == "__main__":
     # data = loadtxt('idfmadrf2S.csv', delimiter=';', skiprows=1)
     #

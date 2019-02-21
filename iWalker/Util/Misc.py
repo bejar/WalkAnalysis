@@ -17,13 +17,14 @@ Misc
 
 """
 
-__author__ = 'bejar'
 
 from pylab import *
 import matplotlib.pyplot as plt
 import numpy as np
 from iWalker.Util import ALS_smoothing
 from scipy.signal import argrelextrema
+
+__author__ = 'bejar'
 
 def extract_extrema(signal, smoothed=True):
     """

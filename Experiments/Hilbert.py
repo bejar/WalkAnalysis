@@ -69,6 +69,7 @@ def plot_hilbert(ex):
     axes4.plot(np.real(h_force), np.imag(h_force), 'r')
     plt.show()
 
+
 def plot_savgol(ex):
     """
     Plots the Savitzky-Golay, ALS_smoothing and other numpy filters applied to the forces
