@@ -30,6 +30,7 @@ from sklearn.mixture import BayesianGaussianMixture as Dirichlet
 import matplotlib.colors as colors
 from sklearn.metrics import silhouette_score
 from itertools import product
+
 __author__ = 'bejar'
 
 # colors = "rgbymcykrgbymcyk"

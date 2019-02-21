@@ -17,7 +17,6 @@ Smoothing
 
 """
 
-__author__ = 'bejar'
 
 from scipy.sparse.linalg import spsolve
 import numpy as np
@@ -25,6 +24,7 @@ import scipy as scp
 from scipy import sparse
 from scipy.sparse import linalg
 
+__author__ = 'bejar'
 
 def numpy_smoothing(x, window_len=11, window='hanning'):
     """smooth the data using a window with requested size.
